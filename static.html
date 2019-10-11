@@ -8,10 +8,11 @@
 		var med, mode, inputv, sam=0;
 		function vad() {
 		input = document.forms["input_form"]["inputval"].value;
-		inputv = input.split(" ").map(Number);
-		for(i=0;i<inputv.length;i++){ sam += inputv[i];}
-		const xbar = sam/inputv.length;
+			inputv = input.split(" ").map(Number);
+			for(i=0;i<inputv.length;i++){ sam += inputv[i];}
+			const xbar = sam/inputv.length; 
 		document.getElementById("xbar_val").value = xbar;
+		sam = 0;
 		}
 	</script>
 </head>
