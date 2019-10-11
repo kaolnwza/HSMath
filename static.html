@@ -21,42 +21,41 @@
 	
 	
 <form name="input_form" action="javascript:vad();">
-	 <p>
-		  <style>
+	<p>
+		<style>
 	input[type="kuy"]{
-	width:30%;
-	border:2px solid #aaa;
-	border-radius:4px;
-	margin:2px 0;
-	outline:none;
-	padding:4px;
-	box-sizing:border-box;
-		transition:.3s; }
-		 input[type="kuy"]:focus{
-			 border-color:dodgerBlue;
-			 box-shadow:0 0 8px 0 dodgerBlue;
-		 }
-		 input[type="box"]{
-			 width:5%;
-			 border:2px solid #aaa;
+		width:30%;
+		border:2px solid #aaa;
 		border-radius:4px;
 		margin:2px 0;
 		outline:none;
 		padding:4px;
 		box-sizing:border-box;
-		transition:.3s;	 
-}
-			  
-	      </style>
-		 <font face = "Verdana" size ="3" color="darkgrey">
+		transition:.3s; }
+		input[type="kuy"]:focus{
+			border-color:dodgerBlue;
+			box-shadow:0 0 8px 0 dodgerBlue;
+		}
+		input[type="box"]{
+			width:5%;
+			border:2px solid #aaa;
+			border-radius:4px;
+			margin:2px 0;
+			outline:none;
+			padding:4px;
+			box-sizing:border-box;
+			transition:.3s;	 
+			}
+			</style>
+		<font face = "Verdana" size ="3" color="darkgrey">
 		Input: <input type="kuy" name="inputval" placeholder="input number like : 1 2 3" required>
-	 <p>XBar = <input type="box" id="xbar_val"> Med = <input type="box" name="med"> 
-		 Mode = <input type="box" name="mode"> </p></font>
-	
-	  
+		<p>XBar = <output type="box" id="xbar_val"> Med = <input type="box" name="med"> 
+		Mode = <input type="box" name="mode"> </p></font>
 	
 	
-	<input type="submit" value="GO"></p>
+	
+	<input type="submit" value="GO">
+	<input type="reset" value="RESET"></p>
 	</form>
 	
         
