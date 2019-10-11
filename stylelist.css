@@ -1,0 +1,44 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    background-image: url(math_bg.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+nav{
+    width: 100%;
+    height: 80px;
+}
+ul {
+    margin-top:20px; 
+    margin-right: 80px;
+    float: right;
+}
+li{
+    display: inline-block;
+   }
+li a{
+    color: white;
+    font-family: agency FB;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 30px;
+    padding: 0 20px;
+   }
+.under::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width .3s;
+}
+.under:hover::after{
+    width: 100%;
+    transition: width .3s; 
+}
+.palalax{
+    
+}
