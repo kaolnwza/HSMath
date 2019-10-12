@@ -5,14 +5,30 @@
 <title>kuy</title>
 	<script>
 		var input;
-		var med, mode, inputv, sam=0;
+		var med=0, mode, input_notdone, input_done = [], xbar=0, sam=0;
 		function vad() {
+			
 		input = document.forms["input_form"]["inputval"].value;
-			inputv = input.split(" ").map(Number);
-			for(i=0;i<inputv.length;i++){ sam += inputv[i];}
-			const xbar = sam/inputv.length; 
+		input_notdone = input.split(" ").map(Number);
+		for (i=0;i<input_notdone.length;i++){ if(!isNaN(input_notdone[i])) {input_done.push(input_notdone[i])}}
+		
+		<!-- xbar -->
+			sam = 0; xbar = 0;
+			for(i=0;i<input_done.length;i++){ sam += input_done[i];}
+			xbar = sam/input_done.length; 
+		<!-- end of xbar -->
+		
+		<!-- median -->
+			if (input_done.length % 2 !== 0){
+				med = input_done[Math.floor(input_done.length / 2)]}
+			else if (input_done.length % 2 === 0) {
+				med = (input_done[Math.floor(input_done.length / 2) - 1] + input_done[Math.floor(input_done.length / 2)])/2}
+			
+
+			
 		document.getElementById("xbar_val").value = xbar;
-		sam = 0;
+		document.getElementById("med_val").value = med;
+		sam = 0; xbar = 0; med=0;
 		}
 	</script>
 </head>
@@ -50,7 +66,7 @@
 			</style>
 		<font face = "Verdana" size ="3" color="darkgrey">
 		Input: <input type="kuy" name="inputval" placeholder="input number like : 1 2 3" required>
-		<p>XBar = <input type="box" id="xbar_val"> Med = <input type="box" name="med"> 
+		<p>XBar = <input type="box" id="xbar_val"> Med = <input type="box" id="med_val"> 
 		Mode = <input type="box" name="mode"> </p></font>
 	
 	
