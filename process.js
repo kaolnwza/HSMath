@@ -1,5 +1,5 @@
 //7.เวกเตอร์ 2 มิติ 3 มิติ
-//Find vector size (หาขนาดของเวกเตอร์)
+//Find vector size (หาขนาดของเวกเตอร์) ****ยังไม่กำหนดขนาดของทศนิยม เมื่อแสดงผลออกมาทศนิยมเยอะมั๊ก****
 function vectorSize(){
     var pointX1, pointY1, pointX2, pointY2, size
     pointX1 = Number(document.forms[""][""].value)
