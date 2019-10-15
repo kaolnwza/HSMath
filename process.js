@@ -8,6 +8,19 @@ function vector2D(){
     pointX2 = Number(document.forms[""][""].value)
     pointY2 = Number(document.forms[""][""].value)
     size = ((pointX1-pointX2)**2 + (pointY1-pointY2)**2)**0.5
-    document.getElementById("vector_size").innerHTML = size
+    document.getElementById("vector_size2D").innerHTML = size
+    return false
+}
+//Vector 3D size
+function vector3D(){
+    var pointX1, pointY1, pointZ1, pointX2, pointY2, pointZ2, size
+    pointX1 = Number(document.forms[""][""].value)
+    pointY1 = Number(document.forms[""][""].value)
+    pointZ1 = Number(document.forms[""][""].value)
+    pointX2 = Number(document.forms[""][""].value)
+    pointY2 = Number(document.forms[""][""].value)
+    pointZ2 = Number(document.forms[""][""].value)
+    size = ((pointX1-pointX2)**2 + (pointY1-pointY2)**2 + (pointZ1-pointZ2)**2)**0.5
+    document.getElementById("vector_size3D").innerHTML = size
     return false
 }
