@@ -8,6 +8,6 @@ function vector2D(){
     pointX2 = Number(document.forms[""][""].value)
     pointY2 = Number(document.forms[""][""].value)
     size = ((pointX1-pointX2)**2 + (pointY1-pointY2)**2)**0.5
-    document.getElementById("vector_size").innerHTML = size
+    document.getElementById("vector_size2D").innerHTML = size
     return false
 }
