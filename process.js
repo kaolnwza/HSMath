@@ -24,3 +24,17 @@ function vector3D(){
     document.getElementById("vector_size3D").innerHTML = size
     return false
 }
+
+//15.วิธีเรียงสับเปลี่ยน, ความน่าจะเป็น, ทฤษฎีบทวินาม
+//วิธีเรียงสับเปลี่ยน
+//สับเปลี่ยนเชิงเส้น ไม่ซ้ำกันเลย (Linear Permutation)
+function linearPer1(){
+    var num, ans, i
+    ans = 1
+    i = 1
+    num = Number(document.forms[""][""].value)
+    for (1; i <= num; i++ ){
+        ans *= i
+    }
+    document.getElementById("linear_per1").innerHTML = ans
+}
