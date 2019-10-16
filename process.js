@@ -37,4 +37,5 @@ function linearPer1(){
         ans *= i
     }
     document.getElementById("linear_per1").innerHTML = ans
+    return false
 }
