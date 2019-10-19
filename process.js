@@ -84,3 +84,12 @@ function circlePer(){
     return false
 }
 
+//ความน่าจะเป็น
+function  probability(){
+    var numProbability, numE, numS //numE ความน่าจะเป็นของเหตุการณ์ที่สนใจ numS ความน่าจะเป็นของเหตุการณ์ทั้งหมด
+    numE = Number(document.forms["probabilityForms"]["num_event"].value)
+    numS = Number(document.forms["probabilityForms"]["num_sample_space"].value)
+    numProbability = numE/numS
+    document.getElementById("probability_ans").innerHTML = numProbability
+    return false
+}
