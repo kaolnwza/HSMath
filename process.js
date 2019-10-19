@@ -1,7 +1,7 @@
+//****ยังไม่กำหนดขนาดของทศนิยม เมื่อแสดงผลออกมาทศนิยมเยอะมั๊ก****
+
 //7.เวกเตอร์ 2 มิติ 3 มิติ
 //Vector 2D size (หาขนาดของเวกเตอร์ 2 มิติ)
-//****ยังไม่กำหนดขนาดของทศนิยม เมื่อแสดงผลออกมาทศนิยมเยอะมั๊ก****
-//Vector 2D size
 function vector2D(){
     var pointX1, pointY1, pointX2, pointY2, size
     pointX1 = Number(document.forms["vertor2DForms"]["pointx1"].value)
