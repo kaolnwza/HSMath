@@ -2,34 +2,55 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>kuy</title>
+<title>tast</title>
 	<script>
-		var input;
-		var med=0, mode, input_notdone, input_done = [], xbar=0, sam=0;
+		
 		function vad() {
-			
-		input = document.forms["input_form"]["inputval"].value;
-		input_notdone = input.split(" ").map(Number);
-		for (i=0;i<input_notdone.length;i++){ if(!isNaN(input_notdone[i])) {input_done.push(input_notdone[i])}}
-		
-		<!-- xbar -->
-			sam = 0; xbar = 0;
-			for(i=0;i<input_done.length;i++){ sam += input_done[i];}
-			xbar = sam/input_done.length; 
-		<!-- end of xbar -->
-		
-		<!-- median -->
-			if (input_done.length % 2 !== 0){
-				med = input_done[Math.floor(input_done.length / 2)]}
-			else if (input_done.length % 2 === 0) {
-				med = (input_done[Math.floor(input_done.length / 2) - 1] + input_done[Math.floor(input_done.length / 2)])/2}
-			
+			var input;
+			var med=0, mode, xbar=0, sam=0;
+			var input_notdone, input_done = [];
+			var sd_sigma, sd_saved=0, sd_s, sd_up2;
 
+			// part of input 
+				input = document.forms["input_form"]["inputval"].value;
+				input_notdone = input.split(" ").map(Number);
+				for (i=0;i<input_notdone.length;i++){ if(!isNaN(input_notdone[i])) {input_done.push(input_notdone[i])}}
+			// end of input part
+
+			// xbar 
+				sam = 0; xbar = 0;
+				for(i=0;i<input_done.length;i++) {sam = sam + input_done[i];}
+				xbar = sam/input_done.length; 
+			// end of xbar 
 			
-		document.getElementById("xbar_val").value = xbar;
-		document.getElementById("med_val").value = med;
-		sam = 0; xbar = 0; med=0;
-		}
+			// median 
+				if (input_done.length % 2 !== 0){
+					med = input_done[Math.floor(input_done.length / 2)]}
+				else if (input_done.length % 2 === 0) {
+					med = (input_done[Math.floor(input_done.length / 2) - 1] + input_done[Math.floor(input_done.length / 2)])/2}
+			// end of median
+
+			// S.D.(sigma) 
+				for(i=0;i<input_done.length;i++) {
+					sd_saved = sd_saved + (input_done[i] - xbar)**2; }
+				sd_sigma = (sd_saved/input_done.length)**0.5;
+			// end of S.D.(sigma) 
+
+			// S.D.(s) 
+				sd_s = (sd_saved/(input_done.length - 1))**0.5;
+			// end of S.D.(s) 
+
+			// S.D. up 2 
+				sd_up2 = sd_saved/input_done.length;
+			// end of S.D. up 2 
+				
+				
+			document.getElementById("xbar_id").value = xbar;
+			document.getElementById("med_id").value = med;
+			document.getElementById("sd_sigma_id").value = sd_sigma;
+			document.getElementById("sd_s_id").value = sd_s;
+			document.getElementById("sd_up2_id").value = sd_up2;
+	}
 	</script>
 </head>
 	
@@ -40,7 +61,7 @@
 <form name="input_form" action="javascript:vad();">
 	<p>
 		<style>
-	input[type="kuy"]{
+	input[type="tast"]{
 		width:30%;
 		border:2px solid #aaa;
 		border-radius:4px;
@@ -49,7 +70,7 @@
 		padding:4px;
 		box-sizing:border-box;
 		transition:.3s; }
-		input[type="kuy"]:focus{
+		input[type="tast"]:focus{
 			border-color:dodgerBlue;
 			box-shadow:0 0 8px 0 dodgerBlue;
 		}
@@ -65,9 +86,15 @@
 			}
 			</style>
 		<font face = "Verdana" size ="3" color="darkgrey">
-		Input: <input type="kuy" name="inputval" placeholder="input number like : 1 2 3" required>
-		<p>XBar = <input type="box" id="xbar_val"> Med = <input type="box" id="med_val"> 
-		Mode = <input type="box" name="mode"> </p></font>
+			Input: <input type="tast" name="inputval" placeholder="input number like : 1 2 3" required>
+		<p>	XBar = <input type="box" id="xbar_id"> 
+			Med = <input type="box" id="med_id"> 
+			Mode = <input type="box" name="mode_id"> </p>
+		<p>	S.D.(sigma) = <input type="box" id="sd_sigma_id"> 
+			S.D.(s) = <input type="box" id="sd_s_id"> 
+			S.D<sub>2</sub>. = <input type="box" id="sd_up2_id"> 
+			Z = <input type="box" id=""> </p>
+				</font>
 	
 	
 	
