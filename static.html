@@ -12,7 +12,7 @@
 
 		// part of input 
 		input = document.forms["input_form"]["inputval"].value;
-		input_notdone = input.split(" ").map(Number);
+		input_notdone = input.split(" ").filter((val)=>val != '').map(Number);
 			for (i=0;i<input_notdone.length;i++){ if(!isNaN(input_notdone[i])) {input_done.push(input_notdone[i])}}
 		// end of input part
 
