@@ -4,21 +4,9 @@
     <meta charset="utf-8" />
     <title>tast</title>
     <script>
-      function vad() {
-        var input;
-        var med = 0,
-          mode,
-          xbar = 0,
-          sam = 0;
-        var input_notdone,
-          input_done = [];
-        var sd_sigma,
-          sd_saved = 0,
-          sd_s,
-          sd_up2;
-
+      function sequence() {
         // part of input
-        input = document.forms["input_form"]["inputval"].value;
+        input = document.forms["sequence_form"]["inputval"].value;
         input_notdone = input
           .split(" ")
           .filter(val => val != "")
@@ -31,66 +19,14 @@
         }
         // end of input part
 
-        // xbar
-        sam = 0;
-        xbar = 0;
-        for (i = 0; i < input_done.length; i++) {
-          sam = sam + input_done[i];
-        }
-        xbar = sam / input_done.length;
-        // end of xbar
-
-        // median
-        if (input_done.length % 2 !== 0) {
-          med = input_done[Math.floor(input_done.length / 2)];
-        } else if (input_done.length % 2 === 0) {
-          med =
-            (input_done[Math.floor(input_done.length / 2) - 1] +
-              input_done[Math.floor(input_done.length / 2)]) /
-            2;
-        }
-        // end of median
-
-        // S.D.(sigma)
-        for (i = 0; i < input_done.length; i++) {
-          sd_saved = sd_saved + (input_done[i] - xbar) ** 2;
-        }
-        sd_sigma = (sd_saved / input_done.length) ** 0.5;
-        // end of S.D.(sigma)
-
-        // S.D.(s)
-        sd_s = (sd_saved / (input_done.length - 1)) ** 0.5;
-        // end of S.D.(s)
-
-        // S.D. up 2
-        sd_up2 = sd_saved / input_done.length;
-        // end of S.D. up 2
-
-        //Mode
-
         document.getElementById("xbar_id").value = xbar;
-        document.getElementById("med_id").value = med;
-        document.getElementById("sd_sigma_id").value = sd_sigma;
-        document.getElementById("sd_s_id").value = sd_s;
-        document.getElementById("sd_up2_id").value = sd_up2;
-        document.getElementById("sorted_id").value = String(
-          input_done.sort()
-        ).split(",");
-        document.getElementById("count_id").value = input_done.length;
-        document.getElementById("sum_id").value = input_done.reduce(
-          (x1, x2) => x1 + x2
-        );
-        document.getElementById("max_val_id").value =
-          input_done[input_done.length - 1];
-        document.getElementById("min_val_id").value = input_done[0];
-        //document.getElementById("mode_id").value = ;
       }
     </script>
   </head>
 
   <p1>Test</p1>
   <body style="background-color:#383838;">
-    <form name="input_form" action="javascript:vad();">
+    <form name="sequence_form" action="javascript:sequence();">
       <p>
         <style>
           input[type="tast"] {
@@ -118,27 +54,8 @@
             transition: 0.3s;
           }
         </style>
-        <font face="Verdana" size="3" color="darkgrey">
-          Input:
-          <input
-            type="tast"
-            name="inputval"
-            placeholder="input number like : 1 2 3"
-            required
-          />
-          <p>Sort = <input class="box" id="sorted_id" readonly /></p>
-          <p>Count = <input class="box" id="count_id" readonly /></p>
-          <p>Sum = <input class="box" id="sum_id" readonly /></p>
-          <p>Max = <input class="box" id="max_val_id" readonly /></p>
-          <p>Min = <input class="box" id="min_val_id" readonly /></p>
-          <p>XBar = <input class="box" id="xbar_id" readonly /></p>
-          <p>Med = <input class="box" id="med_id" readonly /></p>
-          <p>Mode = <input class="box" id="mode_id" readonly /></p>
-          <p>S.D.(sigma) = <input class="box" id="sd_sigma_id" readonly /></p>
-          <p>S.D.(s) = <input class="box" id="sd_s_id" readonly /></p>
-          <p>
-            S.D<sub>2</sub>. = <input class="box" id="sd_up2_id" readonly />
-          </p>
+
+          <p>Σ = <input class="box" id="sorted_id" readonly /></p>
         </font>
 
         <input type="submit" value="GO" />
