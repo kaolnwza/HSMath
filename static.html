@@ -1,80 +1,67 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>kuy</title>
-	<script>
-		var input;
-		var med=0, mode, input_notdone, input_done = [], xbar=0, sam=0;
-		function vad() {
-			
-		input = document.forms["input_form"]["inputval"].value;
-		input_notdone = input.split(" ").map(Number);
-		for (i=0;i<input_notdone.length;i++){ if(!isNaN(input_notdone[i])) {input_done.push(input_notdone[i])}}
-		
-		<!-- xbar -->
-			sam = 0; xbar = 0;
-			for(i=0;i<input_done.length;i++){ sam += input_done[i];}
-			xbar = sam/input_done.length; 
-		<!-- end of xbar -->
-		
-		<!-- median -->
-			if (input_done.length % 2 !== 0){
-				med = input_done[Math.floor(input_done.length / 2)]}
-			else if (input_done.length % 2 === 0) {
-				med = (input_done[Math.floor(input_done.length / 2) - 1] + input_done[Math.floor(input_done.length / 2)])/2}
-			
+  <head>
+    <meta charset="utf-8" />
+    <title>tast</title>
+    <script>
+      function sequence() {
+        // part of input
+        input = document.forms["sequence_form"]["inputval"].value;
+        input_notdone = input
+          .split(" ")
+          .filter(val => val != "")
+          .map(Number);
 
-			
-		document.getElementById("xbar_val").value = xbar;
-		document.getElementById("med_val").value = med;
-		sam = 0; xbar = 0; med=0;
-		}
-	</script>
-</head>
-	
-	<p1>Test</p1>
-<body style="background-color:#383838;">
-	
-	
-<form name="input_form" action="javascript:vad();">
-	<p>
-		<style>
-	input[type="kuy"]{
-		width:30%;
-		border:2px solid #aaa;
-		border-radius:4px;
-		margin:2px 0;
-		outline:none;
-		padding:4px;
-		box-sizing:border-box;
-		transition:.3s; }
-		input[type="kuy"]:focus{
-			border-color:dodgerBlue;
-			box-shadow:0 0 8px 0 dodgerBlue;
-		}
-		input[type="box"]{
-			width:5%;
-			border:2px solid #aaa;
-			border-radius:4px;
-			margin:2px 0;
-			outline:none;
-			padding:4px;
-			box-sizing:border-box;
-			transition:.3s;	 
-			}
-			</style>
-		<font face = "Verdana" size ="3" color="darkgrey">
-		Input: <input type="kuy" name="inputval" placeholder="input number like : 1 2 3" required>
-		<p>XBar = <input type="box" id="xbar_val"> Med = <input type="box" id="med_val"> 
-		Mode = <input type="box" name="mode"> </p></font>
-	
-	
-	
-	<input type="submit" value="GO">
-	<input type="reset" value="RESET"></p>
-	</form>
-	
-        
-</body><strong><strong></strong></strong>
+        for (i = 0; i < input_notdone.length; i++) {
+          if (!isNaN(input_notdone[i])) {
+            input_done.push(input_notdone[i]);
+          }
+        }
+        // end of input part
+
+        document.getElementById("xbar_id").value = xbar;
+      }
+    </script>
+  </head>
+
+  <p1>Test</p1>
+  <body style="background-color:#383838;">
+    <form name="sequence_form" action="javascript:sequence();">
+      <p>
+        <style>
+          input[type="tast"] {
+            width: 30%;
+            border: 2px solid #aaa;
+            border-radius: 4px;
+            margin: 2px 0;
+            outline: none;
+            padding: 4px;
+            box-sizing: border-box;
+            transition: 0.3s;
+          }
+          input[type="tast"]:focus {
+            border-color: dodgerBlue;
+            box-shadow: 0 0 8px 0 dodgerBlue;
+          }
+          input[class="box"] {
+            width: 20%;
+            border: 2px solid #aaa;
+            border-radius: 4px;
+            margin: 2px 0;
+            outline: none;
+            padding: 4px;
+            box-sizing: border-box;
+            transition: 0.3s;
+          }
+        </style>
+
+          <p>Σ = <input class="box" id="sorted_id" readonly /></p>
+        </font>
+
+        <input type="submit" value="GO" />
+        <input type="reset" value="RESET" />
+      </p>
+    </form>
+  </body>
+  <strong><strong></strong></strong>
 </html>
