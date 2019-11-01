@@ -1,5 +1,5 @@
 Easy way for open: https://arpo9999.github.io/Website_test/calculation.html
-
+#ขี้เกียจแก้โค้ด เอาไปทั้งไฟล์เลยละกัน ^-^
 
 # Website_Test
  Practice to build the Website.
