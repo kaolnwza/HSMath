@@ -86,18 +86,39 @@ function vector3D(){
 //Mode
 function mode(){
     var values, valueSet, i, numSet, total
+    var mostFrequency1, mostFrequency2, mostFrequency3
+    var indexFre1, indexFre2
     numSet = []
     values = (document.forms["modeForms"]["values"].value).split(" ").map(forMap)
     valueSet = set(values)
     for(i in valueSet){
         total = count(valueSet[i], values)
         numSet.push(total)
+    }//ข้างบนถูกหมดแล้ว
+    mostFrequency1 = Math.max(...numSet)
+    indexFre1 = numSet.indexOf(mostFrequency1)
+    numSet[indexFre1] = 0
+    mostFrequency2 = Math.max(...numSet)
+    indexFre2 = numSet.indexOf(mostFrequency2)
+    numSet[indexFre2] = 0
+    if(valueSet.length == 2){
+        if(mostFrequency1 > mostFrequency2){
+            document.getElementById("mode").innerHTML = valueSet[indexFre1]
+        }else if(mostFrequency1 == mostFrequency2){
+            document.getElementById("mode").innerHTML = valueSet[indexFre1].toString() + " and " + valueSet[indexFre2].toString()
+        }else{
+            document.getElementById("mode").innerHTML = "Don't have mode"
+        }
+    }else{
+        mostFrequency3 = Math.max(...numSet)
+        if(mostFrequency1 > mostFrequency2){
+            document.getElementById("mode").innerHTML = valueSet[indexFre1]
+        }else if(mostFrequency1 == mostFrequency2 && mostFrequency1 > mostFrequency3){
+            document.getElementById("mode").innerHTML = valueSet[indexFre1].toString() + " and " + valueSet[indexFre2].toString()
+        }else{
+            document.getElementById("mode").innerHTML = "Don't have mode"
+        }
     }
-    //ข้างบนถูกหมดแล้ว
-    Math.max(...numSet) //หาค่าที่มากที่สุดใน Array
-    //ถ้าจำนวนค่ามากสุด ใน numSet มากกว่า 2 แสดงว่าไม่มี mode
-    //ยังไม่เสร็จ เดี๋ยวทำต่อ
-    document.getElementById("mode").innerHTML = numSet
     return false
 }
 
