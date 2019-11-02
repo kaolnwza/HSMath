@@ -1,4 +1,57 @@
-//****ยังไม่กำหนดขนาดของทศนิยม เมื่อแสดงผลออกมาทศนิยมเยอะมั๊ก****
+function forMap(value){
+    return Number(value)
+}
+
+function count(want, array){
+    var i;
+    var count = 0
+    for(i in array){
+        if(array[i] == want){
+            count++;
+        }
+    }
+    return count
+}
+
+function set(array){
+    var i, check, newArray;
+    newArray = []
+    for(i in array){
+        check = newArray.includes(array[i])
+        if(!check){
+            newArray.push(array[i])
+        }
+    }
+    return newArray
+}
+
+function loveYou(){
+    var person1 = document.forms["twoPerson"]["person1"].value;
+    var person2 = document.forms["twoPerson"]["person2"].value;
+    var answer = person1+" love "+person2
+    document.getElementById("love").value = answer;
+    return false
+}
+
+
+// Calculation page
+function plusJs(){
+    var a, b, c;
+    a = Number(document.forms["plusForms"]["numAPlus"].value);
+    b = Number(document.forms["plusForms"]["numBPlus"].value);
+    c = a+b;
+    document.getElementById("plus").innerHTML = c;
+    return false
+}
+function minusJs(){
+    var a, b, c;
+    a = Number(document.forms["minusForms"]["numAMinus"].value);
+    b = Number(document.forms["minusForms"]["numBMinus"].value);
+    c = a-b;
+    document.getElementById("minus").innerHTML = c;
+    return false
+}
+
 
 //7.เวกเตอร์ 2 มิติ 3 มิติ
 //Vector 2D size (หาขนาดของเวกเตอร์ 2 มิติ)
@@ -28,6 +81,46 @@ function vector3D(){
     return false
 }
 
+
+//10.สถิติ
+//Mode
+function mode(){
+    var values, valueSet, i, numSet, total
+    var mostFrequency1, mostFrequency2, mostFrequency3
+    var indexFre1, indexFre2
+    numSet = []
+    values = (document.forms["modeForms"]["values"].value).split(" ").map(forMap)
+    valueSet = set(values)
+    for(i in valueSet){
+        total = count(valueSet[i], values)
+        numSet.push(total)
+    }//ข้างบนถูกหมดแล้ว
+    mostFrequency1 = Math.max(...numSet)
+    indexFre1 = numSet.indexOf(mostFrequency1)
+    numSet[indexFre1] = 0
+    mostFrequency2 = Math.max(...numSet)
+    indexFre2 = numSet.indexOf(mostFrequency2)
+    numSet[indexFre2] = 0
+    if(valueSet.length == 2){
+        if(mostFrequency1 > mostFrequency2){
+            document.getElementById("mode").innerHTML = valueSet[indexFre1]
+        }else if(mostFrequency1 == mostFrequency2){
+            document.getElementById("mode").innerHTML = valueSet[indexFre1].toString() + " and " + valueSet[indexFre2].toString()
+        }else{
+            document.getElementById("mode").innerHTML = "Don't have mode"
+        }
+    }else{
+        mostFrequency3 = Math.max(...numSet)
+        if(mostFrequency1 > mostFrequency2){
+            document.getElementById("mode").innerHTML = valueSet[indexFre1]
+        }else if(mostFrequency1 == mostFrequency2 && mostFrequency1 > mostFrequency3){
+            document.getElementById("mode").innerHTML = valueSet[indexFre1].toString() + " and " + valueSet[indexFre2].toString()
+        }else{
+            document.getElementById("mode").innerHTML = "Don't have mode"
+        }
+    }
+    return false
+}
 
 
 
@@ -83,6 +176,7 @@ function circlePer(){
     document.getElementById("circle_per").innerHTML = ans
     return false
 }
+
 
 //ความน่าจะเป็น
 function  probability(){
