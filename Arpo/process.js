@@ -1,3 +1,30 @@
+function forMap(value){
+    return Number(value)
+}
+
+function count(want, array){
+    var i;
+    var count = 0
+    for(i in array){
+        if(array[i] == want){
+            count++;
+        }
+    }
+    return count
+}
+
+function set(array){
+    var i, check, newArray;
+    newArray = []
+    for(i in array){
+        check = newArray.includes(array[i])
+        if(!check){
+            newArray.push(array[i])
+        }
+    }
+    return newArray
+}
+
 function loveYou(){
     var person1 = document.forms["twoPerson"]["person1"].value;
     var person2 = document.forms["twoPerson"]["person2"].value;
@@ -26,7 +53,8 @@ function minusJs(){
 }
 
 
-//Vector 2D size
+//7.เวกเตอร์ 2 มิติ 3 มิติ
+//Vector 2D size (หาขนาดของเวกเตอร์ 2 มิติ)
 function vector2D(){
     var pointX1, pointY1, pointX2, pointY2, size
     pointX1 = Number(document.forms["vertor2DForms"]["pointx1"].value)
@@ -54,8 +82,29 @@ function vector3D(){
 }
 
 
-//15.วิธีเรียงสับเปลี่ยน, ความน่าจะเป็น, ทฤษฎีบทวินาม
+//10.สถิติ
+//Mode
+function mode(){
+    var values, valueSet, i, numSet, total
+    numSet = []
+    values = (document.forms["modeForms"]["values"].value).split(" ").map(forMap)
+    valueSet = set(values)
+    for(i in valueSet){
+        total = count(valueSet[i], values)
+        numSet.push(total)
+    }
+    //ข้างบนถูกหมดแล้ว
+    Math.max(...numSet) //หาค่าที่มากที่สุดใน Array
+    //ถ้าจำนวนค่ามากสุด ใน numSet มากกว่า 2 แสดงว่าไม่มี mode
+    //ยังไม่เสร็จ เดี๋ยวทำต่อ
+    document.getElementById("mode").innerHTML = numSet
+    return false
+}
 
+
+
+
+//15.วิธีเรียงสับเปลี่ยน, ความน่าจะเป็น, ทฤษฎีบทวินาม
 //วิธีเรียงสับเปลี่ยน
 //สับเปลี่ยนเชิงเส้น ไม่ซ้ำกันเลย (Linear Permutation)
 function linearPer1(){
