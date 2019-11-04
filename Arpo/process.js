@@ -66,7 +66,7 @@ function mode(){
     for(i in valueSet){
         total = count(valueSet[i], values)
         numSet.push(total)
-    }//ข้างบนถูกหมดแล้ว
+    }
     mostFrequency1 = Math.max(...numSet)
     indexFre1 = numSet.indexOf(mostFrequency1)
     numSet[indexFre1] = 0
@@ -157,5 +157,28 @@ function  probability(){
     numS = Number(document.forms["probabilityForms"]["num_sample_space"].value)
     numProbability = numE/numS
     document.getElementById("probability_ans").innerHTML = numProbability
+    return false
+}
+
+//ลําดับอนุกรม(ลําดับจํากัด)(DEV by Ping)
+function sequence(){
+    var ans, numa1, numa2, numn, numd //หาพจน์ที่ N แบบธรรมดา
+    numa1 = Number(document.forms["sequenceForms"]["num_sequencea1"].value)
+    numa2 = Number(document.forms["sequenceForms"]["num_sequencea2"].value)
+    numd = numa2-numa1
+    ans = numa1+(numn-1)*numd
+    document.getElementById("sequence_ans").innerHTML = ans
+    return false
+}
+
+//ลําดับอนุกรม(อนุกรมเลขคณิต)(DEV by Ping)
+function arithmetic_sequence(){
+    var ans, numa1, numa2, numa3, numn//หาลําดับอนุกรม
+    numa1 = Number(document.forms["arithmeticForms"]["num_arithmetica1"].value)
+    numa2 = Number(document.forms["arithmeticForms"]["num_arithmetica2"].value)
+    numa3 = Number(document.forms["arithmeticForms"]["num_arithmetica3"].value)
+    numn = Number(document.forms["arithmeticForms"]["num_arithmeticnn"].value)
+    ans = (numn/2)*(numa1+numn)
+    document.getElementById("arithmetic_ans").innerHTML = ans
     return false
 }
