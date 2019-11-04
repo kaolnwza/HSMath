@@ -211,3 +211,9 @@ function arithmetic_sequence(){
     document.getElementById("arithmetic_ans").innerHTML = ans
     return false
 }
+
+//ลําดับอนุกรม(อนุกรมเรขาคณิต)(DEV by Ping)
+function arithmetic_geometic(){
+    var ans,
+
+    4154
