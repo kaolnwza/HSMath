@@ -81,50 +81,6 @@ function vector3D(){
     return false
 }
 
-
-//10.สถิติ
-//Mode
-function mode(){
-    var values, valueSet, i, numSet, total
-    var mostFrequency1, mostFrequency2, mostFrequency3
-    var indexFre1, indexFre2
-    numSet = []
-    values = (document.forms["modeForms"]["values"].value).split(" ").map(forMap)
-    valueSet = set(values)
-    for(i in valueSet){
-        total = count(valueSet[i], values)
-        numSet.push(total)
-    }
-    mostFrequency1 = Math.max(...numSet)
-    indexFre1 = numSet.indexOf(mostFrequency1)
-    numSet[indexFre1] = 0
-    mostFrequency2 = Math.max(...numSet)
-    indexFre2 = numSet.indexOf(mostFrequency2)
-    numSet[indexFre2] = 0
-    if(valueSet.length == 2){
-        if(mostFrequency1 > mostFrequency2){
-            document.getElementById("mode").innerHTML = valueSet[indexFre1]
-        }else if(mostFrequency1 == mostFrequency2){
-            document.getElementById("mode").innerHTML = valueSet[indexFre1].toString() + " and " + valueSet[indexFre2].toString()
-        }else{
-            document.getElementById("mode").innerHTML = "Don't have mode"
-        }
-    }else{
-        mostFrequency3 = Math.max(...numSet)
-        if(mostFrequency1 > mostFrequency2){
-            document.getElementById("mode").innerHTML = valueSet[indexFre1]
-        }else if(mostFrequency1 == mostFrequency2 && mostFrequency1 > mostFrequency3){
-            document.getElementById("mode").innerHTML = valueSet[indexFre1].toString() + " and " + valueSet[indexFre2].toString()
-        }else{
-            document.getElementById("mode").innerHTML = "Don't have mode"
-        }
-    }
-    return false
-}
-
-
-
-
 //15.วิธีเรียงสับเปลี่ยน, ความน่าจะเป็น, ทฤษฎีบทวินาม
 //วิธีเรียงสับเปลี่ยน
 //สับเปลี่ยนเชิงเส้น ไม่ซ้ำกันเลย (Linear Permutation)
@@ -226,6 +182,8 @@ function arithmetic_geometic(){
         document.getElementById("geometic_ans").innerHTML = ans
     }
 }
+
+//สถิติ
 function static() {
     var input;
     var med = 0,
@@ -288,6 +246,63 @@ function static() {
     // end of S.D. up 2
 
     //Mode
+    function count(want, array) {
+        var i;
+        var count = 0
+        for (i in array) {
+            if (array[i] == want) {
+                count++;
+            }
+        }
+        return count
+    }
+
+    function set(array) {
+        var i, check, newArray;
+        newArray = []
+        for (i in array) {
+            check = newArray.includes(array[i])
+            if (!check) {
+                newArray.push(array[i])
+            }
+        }
+        return newArray
+    }
+
+    var values, valueSet, i_val, numSet, total;
+    var mostFrequency1, mostFrequency2, mostFrequency3;
+    var indexFre1, indexFre2;
+    numSet = []
+    values = input_done;
+    valueSet = set(values)
+    for (i_val in valueSet) {
+        total = count(valueSet[i_val], values)
+        numSet.push(total);
+    }
+    mostFrequency1 = Math.max(...numSet)
+    indexFre1 = numSet.indexOf(mostFrequency1)
+    numSet[indexFre1] = 0;
+    mostFrequency2 = Math.max(...numSet)
+    indexFre2 = numSet.indexOf(mostFrequency2)
+    numSet[indexFre2] = 0
+    if (valueSet.length == 2) {
+        if (mostFrequency1 > mostFrequency2) {
+            document.getElementById("mode_id").value = valueSet[indexFre1]
+        } else if (mostFrequency1 == mostFrequency2) {
+            document.getElementById("mode_id").value = valueSet[indexFre1].toString() + " and " + valueSet[indexFre2].toString()
+        } else {
+            document.getElementById("mode_id").value = "Don't have mode"
+        }
+    } else {
+        mostFrequency3 = Math.max(...numSet)
+        if (mostFrequency1 > mostFrequency2) {
+            document.getElementById("mode_id").value = valueSet[indexFre1]
+        } else if (mostFrequency1 == mostFrequency2 && mostFrequency1 > mostFrequency3) {
+            document.getElementById("mode_id").value = valueSet[indexFre1].toString() + " and " + valueSet[indexFre2].toString()
+        } else {
+            document.getElementById("mode_id").value = "Don't have mode"
+        }
+    }
 
     document.getElementById("xbar_id").value = xbar;
     document.getElementById("med_id").value = med;
