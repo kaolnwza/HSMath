@@ -188,6 +188,7 @@ function  probability(){
     return false
 }
 
+
 //ลําดับอนุกรม(ลําดับจํากัด)(DEV by Ping)
 function sequence(){
     var ans, numa1, numa2, numn, numd //หาพจน์ที่ N แบบธรรมดา
