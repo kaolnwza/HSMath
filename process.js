@@ -214,4 +214,10 @@ function arithmetic_sequence(){
 
 //ลําดับอนุกรม(อนุกรมเรขาคณิต)(DEV by Ping)
 function arithmetic_geometic(){
-    var ans,
+    var //หาลําดับเรขาคณิต
+    input_done
+    numr = numa2/numa1
+    if (numfinal == "?"){
+        ans = (numa1*(1-(numr**numn)))/1-numr
+        document.get
+    }
