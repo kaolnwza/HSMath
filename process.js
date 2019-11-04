@@ -214,10 +214,15 @@ function arithmetic_sequence(){
 
 //ลําดับอนุกรม(อนุกรมเรขาคณิต)(DEV by Ping)
 function arithmetic_geometic(){
-    var //หาลําดับเรขาคณิต
+    var input_done, numn, numr //หาลําดับเรขาคณิต
     input_done
-    numr = numa2/numa1
-    if (numfinal == "?"){
+    numn = Number(document.forms["geometicForms"]["num_geometicnn"].value)
+    numr = input_done[input_done.length-1]/input_done[input_done.length-2]
+    if (numr < 1){
         ans = (numa1*(1-(numr**numn)))/1-numr
-        document.get
+        document.getElementById("geometic_ans").innerHTML = ans
+    }else if (numr > 1){
+        ans = (numa1*((numr**numn)-1))/numr-1
+        document.getElementById("geometic_ans").innerHTML = ans
     }
+}
