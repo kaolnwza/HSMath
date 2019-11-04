@@ -322,3 +322,27 @@ function static() {
     //document.getElementById("mode_id").value = ;
     document.getElementById("tss").value = test;
 }
+
+//เซ็ต
+//union
+function union(){
+    var input_a, input_b, input_c, ans, set_a, set_b, set_c
+    input_a = (document.forms["union_set"]["union_set1"].value).split(" ").map(forMap)
+    input_b = (document.forms["union_set"]["union_set2"].value).split(" ").map(forMap)
+    input_c = (document.forms["union_set"]["union_set3"].value).split(" ").map(forMap)
+    set_a = set(input_a)
+    set_b = set(input_b)
+    set_c = set(input_c)
+    if(input_c != ""){
+        //ถ้า C ไม่ว่าง
+        union1 = ([set_a, set_b])
+        ans = ([union1, input_c])
+        document.getElementById("union_set").innerHTML = ans
+    }else if(input_c == ""){
+        //ถ้า C ว่าง
+        ans = ([set_a, set_b])
+        document.getElementById("union_set").innerHTML = ans
+    }else if(input_a == "" || input_b == "")
+        document.write("NULL")
+    return false
+}
