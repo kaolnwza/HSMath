@@ -214,3 +214,5 @@ function arithmetic_sequence(){
 //ลําดับอนุกรม(อนุกรมเรขาคณิต)(DEV by Ping)
 function arithmetic_geometic(){
     var ans,
+
+    4154
