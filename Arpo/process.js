@@ -94,7 +94,7 @@ function mode(){
     for(i in valueSet){
         total = count(valueSet[i], values)
         numSet.push(total)
-    }//ข้างบนถูกหมดแล้ว
+    }
     mostFrequency1 = Math.max(...numSet)
     indexFre1 = numSet.indexOf(mostFrequency1)
     numSet[indexFre1] = 0
