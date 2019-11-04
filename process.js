@@ -94,7 +94,7 @@ function mode(){
     for(i in valueSet){
         total = count(valueSet[i], values)
         numSet.push(total)
-    }//ข้างบนถูกหมดแล้ว
+    }
     mostFrequency1 = Math.max(...numSet)
     indexFre1 = numSet.indexOf(mostFrequency1)
     numSet[indexFre1] = 0
@@ -143,7 +143,7 @@ function linearPer1(){
 
 //สับเปลี่ยนเชิงเส้น มีตัวซ้ำ
 function linearPer2(){
-    var num, ans, divideNum, i, devide
+    var num, ans, divideNum, i, divide
     ans = 1
     i = 1
     divide = 1
