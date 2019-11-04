@@ -15,10 +15,10 @@ div.box{
     border: grey 3px solid;
     border-radius: 10px;
 }
-input[type="text"]{
+input{
     background-color: rgba(255, 255, 255, 0.5);
     width: 100px;
 }
-input[type="text"]:focus{
+input:focus{
     background-color: rgba(184, 255, 196, 0.568);
 }

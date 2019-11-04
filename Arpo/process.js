@@ -25,34 +25,6 @@ function set(array){
     return newArray
 }
 
-function loveYou(){
-    var person1 = document.forms["twoPerson"]["person1"].value;
-    var person2 = document.forms["twoPerson"]["person2"].value;
-    var answer = person1+" love "+person2
-    document.getElementById("love").value = answer;
-    return false
-}
-
-
-// Calculation page
-function plusJs(){
-    var a, b, c;
-    a = Number(document.forms["plusForms"]["numAPlus"].value);
-    b = Number(document.forms["plusForms"]["numBPlus"].value);
-    c = a+b;
-    document.getElementById("plus").innerHTML = c;
-    return false
-}
-function minusJs(){
-    var a, b, c;
-    a = Number(document.forms["minusForms"]["numAMinus"].value);
-    b = Number(document.forms["minusForms"]["numBMinus"].value);
-    c = a-b;
-    document.getElementById("minus").innerHTML = c;
-    return false
-}
-
-
 //7.เวกเตอร์ 2 มิติ 3 มิติ
 //Vector 2D size (หาขนาดของเวกเตอร์ 2 มิติ)
 function vector2D(){
