@@ -1,7 +1,4 @@
-function forMap(value){
-    return Number(value)
-}
-
+//ใช้เพื่อนับค่า want ใน array ที่ต้องการว่ามีกี่ตัว Argument: Number, array | return: Number
 function count(want, array){
     var i;
     var count = 0
@@ -13,6 +10,7 @@ function count(want, array){
     return count
 }
 
+//ใช้เพื่อหา set(ไม่มีตัวซ้ำใน array) Argument: array | return: array
 function set(array){
     var i, check, newArray;
     newArray = []
@@ -25,32 +23,23 @@ function set(array){
     return newArray
 }
 
-function loveYou(){
-    var person1 = document.forms["twoPerson"]["person1"].value;
-    var person2 = document.forms["twoPerson"]["person2"].value;
-    var answer = person1+" love "+person2
-    document.getElementById("love").value = answer;
-    return false
+//ใช้เพื่อหาค่าตาม 3 เหลี่ยมพาสคาล ใช้ในทฤษฎีบททวินาม(Binomial Theorem) | return: array
+function trianglePascal_n(num){
+    var round, value, now_value
+    value = [1, 1]
+    for(round = 1; round <= num; round++){
+        now_value = []
+        for(posi = 1; posi < round; posi++){
+            now_value.push(value[posi]+value[posi-1])
+        }
+        now_value.unshift(1)
+        now_value.push(1)
+        value = now_value
+    }
+    return value
 }
 
 
-// Calculation page
-function plusJs(){
-    var a, b, c;
-    a = Number(document.forms["plusForms"]["numAPlus"].value);
-    b = Number(document.forms["plusForms"]["numBPlus"].value);
-    c = a+b;
-    document.getElementById("plus").innerHTML = c;
-    return false
-}
-function minusJs(){
-    var a, b, c;
-    a = Number(document.forms["minusForms"]["numAMinus"].value);
-    b = Number(document.forms["minusForms"]["numBMinus"].value);
-    c = a-b;
-    document.getElementById("minus").innerHTML = c;
-    return false
-}
 
 
 //7.เวกเตอร์ 2 มิติ 3 มิติ
@@ -144,6 +133,26 @@ function  probability(){
     return false
 }
 
+//ทฤษฎีบททวินาม(Binomial Theorem)
+function bioTheorem(){
+    var num = Number(document.forms["Binomial_Theorem_form"]["exponent"].value)
+    var i, data, aExponent, bExponent, constant
+    data = []
+    for(i = 0; i <= num; i++){
+        aExponent = num-i
+        bExponent = i
+        constant = trianglePascal_n(num)
+        if(i == 0){
+            data.push("a<sup>" + aExponent.toString() + "</sup>")
+        }else if(i == num){
+            data.push("b<sup>" + bExponent.toString() + "</sup>")
+        }else{
+            data.push(constant[i] + "a<sup>" + aExponent.toString() + "</sup>b<sup>" + bExponent.toString() + "</sup>")
+        }
+    }
+    document.getElementById("binomial_theorem").innerHTML = data.join(" + ")
+    return false
+}
 
 //ลําดับอนุกรม(ลําดับจํากัด)(DEV by Ping)
 function sequence(){
@@ -327,9 +336,9 @@ function static() {
 //union
 function union(){
     var input_a, input_b, input_c, ans, set_a, set_b, set_c
-    input_a = (document.forms["union_set"]["union_set1"].value).split(" ").map(forMap)
-    input_b = (document.forms["union_set"]["union_set2"].value).split(" ").map(forMap)
-    input_c = (document.forms["union_set"]["union_set3"].value).split(" ").map(forMap)
+    input_a = (document.forms["union_set"]["union_set1"].value).split(" ").map(Number)
+    input_b = (document.forms["union_set"]["union_set2"].value).split(" ").map(Number)
+    input_c = (document.forms["union_set"]["union_set3"].value).split(" ").map(Number)
     set_a = set(input_a)
     set_b = set(input_b)
     set_c = set(input_c)
