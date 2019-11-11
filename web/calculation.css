@@ -1,0 +1,24 @@
+div#box{
+    font-family: TH Sarabun New;
+    font-size: 24px;
+    margin: auto;
+    width: 700px;
+    height: fit-content;
+}
+div.box{
+    text-align: center;
+    font-size: 24px;
+    width: 100%;
+    height: fit-content;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: grey 3px solid;
+    border-radius: 10px;
+}
+input{
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100px;
+}
+input:focus{
+    background-color: rgba(184, 255, 196, 0.568);
+}

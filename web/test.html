@@ -1,0 +1,35 @@
+<html>
+    <style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    h1{
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 200px;
+    }
+    h1::before{
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #262626;
+        width: 0%;
+        transition: 1s;
+        overflow: hidden;
+    }
+    h1:hover::before{
+        width: 100%;
+    }
+    </style>
+    <head></head>
+    <body>
+        <h1 data-text="Methetics">Methetics</h1>
+        <a href="index.html">GOOOOO</a>
+    </body>
+    </html>

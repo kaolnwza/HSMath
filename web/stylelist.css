@@ -1,0 +1,68 @@
+html{
+    height: 100%;
+    overflow: hidden;
+}
+body{
+    margin: 0;
+    padding: 0;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-family: "Agency fb";
+    
+}
+.pala{
+    box-sizing: border-box;
+    min-height: 100vh;
+    padding: 15vw 0 5vw;
+    position: relative;
+    transform-style: inherit;
+    width: 100vw;
+}
+.pala h1 {
+    color: white;
+    font-size: 9vw;
+    padding: 10px;
+}
+.pala p{
+    color: white;
+    padding: 10px;
+    font-size: 3vw;
+}
+.pala, pala:before{
+    background: 50% 50% / cover;
+}
+.pala::before{
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    background-image: url(math_bg.jpg);
+    background-size: cover;
+    transform-origin: center center 0;
+    z-index: -1;
+    min-height: 100vh;
+    transform: translateZ(-1px) scale(2);
+
+}
+.pala * { 
+    font-weight: normal ;
+    letter-spacing: 0.2em;
+    text-align: center;
+    margin: 0;
+    padding: 1em 0;
+    
+}
+.bg
+{   
+    background-color: rgba(29, 29, 29, 0.719);
+    height: 3000px;
+}
+.row{
+    padding-top:500px ;
+}
