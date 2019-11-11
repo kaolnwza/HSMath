@@ -16,12 +16,13 @@ body{
 .pala{
     box-sizing: border-box;
     min-height: 100vh;
-    padding: 15vw 0 5vw;
+    padding: 0vw 0vw 15vw 0vw;
     position: relative;
     transform-style: inherit;
     width: 100vw;
 }
 .pala h1 {
+    margin-top: 30vh;
     color: white;
     font-size: 9vw;
     padding: 10px;
@@ -59,10 +60,18 @@ body{
     
 }
 .bg
-{   
-    background-color: rgba(29, 29, 29, 0.719);
+{
     height: 3000px;
 }
+.text-white{
+    color: white;
+}
 .row{
-    padding-top:500px ;
+    padding-top:120vh ;
+}
+.top{
+    padding: 1px 0 0 10px;
+}
+.top3{
+    padding: 2px;
 }
