@@ -23,6 +23,11 @@ function set(array){
     return newArray
 }
 
+//ใช้เพื่อหาค่า log ของ y ฐาน x | return: Number
+function getBaseLog(x, y) {
+    return Math.log(y) / Math.log(x);
+}
+
 //ใช้เพื่อหาค่าตาม 3 เหลี่ยมพาสคาล ใช้ในทฤษฎีบททวินาม(Binomial Theorem) | return: array
 function trianglePascal_n(num){
     var round, value, now_value
@@ -38,7 +43,6 @@ function trianglePascal_n(num){
     }
     return value
 }
-
 
 
 
@@ -69,6 +73,39 @@ function vector3D(){
     document.getElementById("vector_size3D").innerHTML = size
     return false
 }
+
+
+
+
+// 14.ฟังก์ชันเอกโพซ์เนนเชียล และฟังก์ชันลอการิทึม
+//Exponential
+function findExponential(){
+    var value, power, ans
+    value = eval(document.forms["Exponential_form"]["value"].value)
+    power = eval(document.forms["Exponential_form"]["power"].value)
+    ans = Math.pow(value, power)
+    if(1>ans>0){
+        document.getElementById("featureExpo").innerHTML = "Decreasing function"
+    }else if(ans>1){
+        document.getElementById("featureExpo").innerHTML = "Increasing function"
+    }else{
+        document.getElementById("featureExpo").innerHTML = "Isn't exponential function"
+    }
+    document.getElementById("exponential").innerHTML = ans
+    return false
+}
+
+
+//Logarithm(Fundamental)
+function findLog(){
+    var value, base
+    value = Number(document.forms["Logarithm_form"]["value_x"].value)
+    base = Number(document.forms["Logarithm_form"]["value_y"].value)
+    document.getElementById("log").innerHTML = getBaseLog(base, value)
+    return false
+}
+
+
 
 //15.วิธีเรียงสับเปลี่ยน, ความน่าจะเป็น, ทฤษฎีบทวินาม
 //วิธีเรียงสับเปลี่ยน

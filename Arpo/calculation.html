@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Calculation</title>
-    <link rel="stylesheet" href="stylesheet.css">
-    <link rel="stylesheet" href="calculation.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/calculation.css">
     <script src="process.js"></script>
 </head>
 <body id="calculation">
@@ -18,6 +18,26 @@
     </nav>
 
     <div id="box" style="margin-top: -680px;">
+    <div class="box">
+        <form name="plusForms" onsubmit="return plusJs()" style="padding: 10px;">
+            <p><strong>Plus</strong> <input type="submit" value="calculate"><br>    
+            num_A + num_B = <strong id="plus">Ans</strong><br>
+            num_A = <input type="text" name="numAPlus"> <br>
+            num_B = <input type="text" name="numBPlus"> <br><br>
+            </p>
+        </form>
+    </div>
+
+    <div class="box">
+        <form name="minusForms" onsubmit="return minusJs()">
+            <p><strong>Minus</strong> <input type="submit" value="calculate"><br>
+            num_A - num_B = <strong id="minus">Ans</strong><br>
+            num_A = <input type="text" name="numAMinus"><br>
+            num_B = <input type="text" name="numBMinus">
+            </p>
+        </form>
+    </div>
+
     <div class="box">
         <form name="vertor2DForms" onsubmit="return vector2D()">
             <p><strong>Vector 2D size</strong> <input type="submit" value="calculate"><br>
@@ -90,6 +110,37 @@
         </p>
         </form>
     </div>
+
+    <div class="box">
+        <form name="Binomial_Theorem_form" onsubmit="return bioTheorem()">
+        <p><strong>Binomial Theorem <input type="submit" value="calculate"></strong><br>
+            (a+b)<sup>n</sup> = <strong id="binomial_theorem">Ans</strong><br>
+            n = <input type="text" name="exponent">
+        </p>
+        </form>
+    </div>
+
+    <div class="box">
+        <form name="Logarithm_form" onsubmit="return findLog()">
+        <p><strong>Logarithm <input type="submit" value="calculate"></strong><br>
+            Log<sub>x</sub>y = <strong id="log">Ans</strong><br>
+            x = <input type="text" name="value_x" placeholder="static value"><br>
+            y = <input type="text" name="value_y" placeholder="base">
+        </p>
+        </form>
+    </div>
+
+    <div class="box">
+        <form name="Exponential_form" onsubmit="return findExponential()">
+        <p><strong>Exponential <input type="submit" value="calculate"></strong><br>
+            a<sup>x</sup> = <strong id="exponential">Ans</strong><br>
+            Feature: <strong id="featureExpo">Ans</strong><br>
+            a = <input type="text" name="value" placeholder="static value"><br>
+            x = <input type="text" name="power" placeholder="power">
+        </p>
+        </form>
+    </div>
+
     </div>
 </body>
 </html>
