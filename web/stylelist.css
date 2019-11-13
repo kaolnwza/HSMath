@@ -11,6 +11,7 @@ body{
     overflow-y: scroll;
     overflow-x: hidden;
     font-family: "Agency fb";
+    background-color: #1e2126;
     
 }
 .pala{
@@ -61,7 +62,8 @@ body{
 }
 .bg
 {
-    height: 3000px;
+    padding-bottom:30vh ;
+    background-color: #2A2F35;
 }
 .text-white{
     color: white;
@@ -74,4 +76,8 @@ body{
 }
 .top3{
     padding: 2px;
+}
+.size{
+    width: 5vw;
+    height: 38vh;
 }
