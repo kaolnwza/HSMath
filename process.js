@@ -99,8 +99,16 @@ function findExponential(){
 //Logarithm(Fundamental)
 function findLog(){
     var value, base
-    value = Number(document.forms["Logarithm_form"]["value_x"].value)
-    base = Number(document.forms["Logarithm_form"]["value_y"].value)
+    value = document.forms["Logarithm_form"]["value_x"].value
+    base = document.forms["Logarithm_form"]["value_y"].value
+    if(value == "e"){
+        value = 2.7182818
+    }
+    if(base == "e"){
+        base = 2.7182818
+    }
+    value = eval(value)
+    base = eval(base)
     document.getElementById("log").innerHTML = getBaseLog(base, value)
     return false
 }
