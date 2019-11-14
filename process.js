@@ -23,12 +23,12 @@ function set(array){
     return newArray
 }
 
-//ใช้เพื่อหาค่า log ของ y ฐาน x | return: Number
+//ใช้เพื่อหาค่า log ของ y ฐาน x Argument: Number, Number | return: Number
 function getBaseLog(x, y) {
     return Math.log(y) / Math.log(x);
 }
 
-//ใช้เพื่อหาค่าตาม 3 เหลี่ยมพาสคาล ใช้ในทฤษฎีบททวินาม(Binomial Theorem) | return: array
+//ใช้เพื่อหาค่าตาม 3 เหลี่ยมพาสคาล ใช้ในทฤษฎีบททวินาม(Binomial Theorem) Argument: Number | return: array
 function trianglePascal_n(num){
     var round, value, now_value
     value = [1, 1]
