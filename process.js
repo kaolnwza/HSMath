@@ -202,11 +202,11 @@ function bioTheorem(){
 //ลําดับอนุกรม(ลําดับจํากัด)(DEV by Ping)
 function sequence(){
     var ans, numa1, numa2, numn, numd //หาพจน์ที่ N แบบธรรมดา an = a1+(n-1)d
-    numa1 = Number(document.forms["sequenceForms"]["num_sequencea1"].value)
-    numa2 = Number(document.forms["sequenceForms"]["num_sequencea2"].value)
-    numn = Number(document.forms["sequenceForms"]["num_sequencenn"].value)
-    numd = numa2-numa1
-    ans = numa1+(numn-1)*numd
+    numa1 = Number(document.forms["sequenceForms"]["num_sequencea1"].value) //numa1 = a1
+    numa2 = Number(document.forms["sequenceForms"]["num_sequencea2"].value) //numa2 = a2
+    numn = Number(document.forms["sequenceForms"]["num_sequencenn"].value) // numn = n
+    numd = numa2-numa1 // numd = d
+    ans = numa1+(numn-1)*numd // an = a1+(n-1)d
     document.getElementById("sequence_ans").innerHTML = ans
     return false
 }
@@ -214,11 +214,11 @@ function sequence(){
 //ลําดับอนุกรม(อนุกรมเลขคณิต)(DEV by Ping)
 function arithmetic_sequence(){
     var ans, numa1, numa2, numa3, numn//หาลําดับอนุกรม
-    numa1 = Number(document.forms["arithmeticForms"]["num_arithmetica1"].value)
-    numa2 = Number(document.forms["arithmeticForms"]["num_arithmetica2"].value)
-    numa3 = Number(document.forms["arithmeticForms"]["num_arithmetica3"].value)
-    numn = Number(document.forms["arithmeticForms"]["num_arithmeticnn"].value)
-    ans = (numn/2)*(numa1+numn)
+    numa1 = Number(document.forms["arithmeticForms"]["num_arithmetica1"].value) //numa1 = a1
+    numa2 = Number(document.forms["arithmeticForms"]["num_arithmetica2"].value) //numa2 = a2
+    numa3 = Number(document.forms["arithmeticForms"]["num_arithmetica3"].value) //numa3 = a3
+    numn = Number(document.forms["arithmeticForms"]["num_arithmeticnn"].value) //numn = an
+    ans = (numn/2)*(numa1+numn) //สูตร sn = n/2(a1+an)
     document.getElementById("arithmetic_ans").innerHTML = ans
     return false
 }
@@ -226,14 +226,14 @@ function arithmetic_sequence(){
 //ลําดับอนุกรม(อนุกรมเรขาคณิต)(DEV by Ping)
 function arithmetic_geometic(){
     var input_done, numn, numr //หาลําดับเรขาคณิต
-    input_done
-    numn = Number(document.forms["geometicForms"]["num_geometicnn"].value)
-    numr = input_done[input_done.length-1]/input_done[input_done.length-2]
+    input_done //รอการแก้บัคโดยเก้าเดาว่าเป็น an
+    numn = Number(document.forms["geometicForms"]["num_geometicnn"].value)//numn = n(เลขชี้กําลัง)
+    numr = input_done[input_done.length-1]/input_done[input_done.length-2]//numr = r
     if (numr < 1){
-        ans = (input_done[0]*(1-(numr**numn)))/1-numr
+        ans = (input_done[0]*(1-(numr**numn)))/1-numr//sn = a1*(1-(r**n))/1-r
         document.getElementById("geometic_ans").innerHTML = ans
     }else if (numr > 1){
-        ans = (input_done[0]*((numr**numn)-1))/numr-1
+        ans = (input_done[0]*((numr**numn)-1))/numr-1//sn = a1*((r**n)-1)/1-r
         document.getElementById("geometic_ans").innerHTML = ans
     }
 }
@@ -382,15 +382,9 @@ function static() {
 //union
 function union(){
     var input_a, input_b, input_c, ans, set_a, set_b, set_c
-    input_a = (document.forms["union_set"]["union_set1"].value).split(" ").split(" ")
-        .filter(val => val != "")
-        .map(Number);
-    input_b = (document.forms["union_set"]["union_set2"].value).split(" ").split(" ")
-        .filter(val => val != "")
-        .map(Number);
-    input_c = (document.forms["union_set"]["union_set3"].value).split(" ").split(" ")
-        .filter(val => val != "")
-        .map(Number); //gu add more input filter
+    input_a = (document.forms["union_set"]["union_set1"].value).split(" ").map(Number)
+    input_b = (document.forms["union_set"]["union_set2"].value).split(" ").map(Number)
+    input_c = (document.forms["union_set"]["union_set3"].value).split(" ").map(Number)
     set_a = set(input_a)
     set_b = set(input_b)
     set_c = set(input_c)
