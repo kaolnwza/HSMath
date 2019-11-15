@@ -201,9 +201,10 @@ function bioTheorem(){
 
 //ลําดับอนุกรม(ลําดับจํากัด)(DEV by Ping)
 function sequence(){
-    var ans, numa1, numa2, numn, numd //หาพจน์ที่ N แบบธรรมดา
+    var ans, numa1, numa2, numn, numd //หาพจน์ที่ N แบบธรรมดา an = a1+(n-1)d
     numa1 = Number(document.forms["sequenceForms"]["num_sequencea1"].value)
     numa2 = Number(document.forms["sequenceForms"]["num_sequencea2"].value)
+    numn = Number(document.forms["sequenceForms"]["num_sequencenn"].value)
     numd = numa2-numa1
     ans = numa1+(numn-1)*numd
     document.getElementById("sequence_ans").innerHTML = ans
