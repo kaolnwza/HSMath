@@ -199,27 +199,39 @@ function bioTheorem(){
     return false
 }
 
-//ลําดับอนุกรม(ลําดับจํากัด)(DEV by Ping)
+//ลําดับอนุกรม(ลําดับจํากัด(ลําดับเลขคณิต))(DEV by Ping)
 function sequence(){
-    var ans, numa1, numa2, numn, numd //หาพจน์ที่ N แบบธรรมดา an = a1+(n-1)d
-    numa1 = Number(document.forms["sequenceForms"]["num_sequencea1"].value) //numa1 = a1
-    numa2 = Number(document.forms["sequenceForms"]["num_sequencea2"].value) //numa2 = a2
-    numn = Number(document.forms["sequenceForms"]["num_sequencenn"].value) // numn = n
-    numd = numa2-numa1 // numd = d
-    ans = numa1+(numn-1)*numd // an = a1+(n-1)d
-    document.getElementById("sequence_ans").innerHTML = ans
+    var ans, a1, a2, n, d //หาพจน์ที่ N แบบธรรมดา an = a1+(n-1)d
+    a1 = Number(document.forms["sequenceForms"]["num_sequencea1"].value) //numa1 = a1
+    a2 = Number(document.forms["sequenceForms"]["num_sequencea2"].value) //numa2 = a2
+    n = Number(document.forms["sequenceForms"]["num_sequencenn"].value) // numn = n
+    d = a2-a1 // numd = d
+    ans = a1+(n-1)*d // an = a1+(n-1)d
+    document.getElementById("sequence_ans").value = ans
     return false
+}
+
+//ลําดับเรขาคณิต(DEV by Ping)
+function sequence2(){
+    var ans, a1, a2, a3, r, n //หาลําดับเรขาคณิต
+    a1 = Number(document.forms["sequenceForms2"]["num_sequence2a1"].value) //numa1 = a1
+    a2 = Number(document.forms["sequenceForms2"]["num_sequence2a2"].value) //numa2 = a2
+    a3 = Number(document.forms["sequenceForms2"]["num_sequence2a3"].value) //numa3 = a3
+    r = Number(document.forms["sequenceForms2"]["num_sequence2nr"].value) //numr = r
+    n = Number(document.forms["sequenceForms2"]["num_sequence2nn"].value) //numn = n
+    ans = a1*(r**(n-1)) //a1*(r**(n-1))
+    document.getElementById("sequence2_ans").value = ans
 }
 
 //ลําดับอนุกรม(อนุกรมเลขคณิต)(DEV by Ping)
 function arithmetic_sequence(){
-    var ans, numa1, numa2, numa3, numn//หาลําดับอนุกรม
-    numa1 = Number(document.forms["arithmeticForms"]["num_arithmetica1"].value) //numa1 = a1
-    numa2 = Number(document.forms["arithmeticForms"]["num_arithmetica2"].value) //numa2 = a2
-    numa3 = Number(document.forms["arithmeticForms"]["num_arithmetica3"].value) //numa3 = a3
-    numn = Number(document.forms["arithmeticForms"]["num_arithmeticnn"].value) //numn = an
+    var ans, a1, a2, a3, n//หาลําดับอนุกรม
+    a1 = Number(document.forms["arithmeticForms"]["num_arithmetica1"].value) //numa1 = a1
+    a2 = Number(document.forms["arithmeticForms"]["num_arithmetica2"].value) //numa2 = a2
+    a3 = Number(document.forms["arithmeticForms"]["num_arithmetica3"].value) //numa3 = a3
+    n = Number(document.forms["arithmeticForms"]["num_arithmeticnn"].value) //numn = an
     ans = (numn/2)*(numa1+numn) //สูตร sn = n/2(a1+an)
-    document.getElementById("arithmetic_ans").innerHTML = ans
+    document.getElementById("arithmetic_ans").value = ans
     return false
 }
 
@@ -231,10 +243,10 @@ function arithmetic_geometic(){
     numr = input_done[input_done.length-1]/input_done[input_done.length-2]//numr = r
     if (numr < 1){
         ans = (input_done[0]*(1-(numr**numn)))/1-numr//sn = a1*(1-(r**n))/1-r
-        document.getElementById("geometic_ans").innerHTML = ans
+        document.getElementById("geometic_ans").value = ans
     }else if (numr > 1){
         ans = (input_done[0]*((numr**numn)-1))/numr-1//sn = a1*((r**n)-1)/1-r
-        document.getElementById("geometic_ans").innerHTML = ans
+        document.getElementById("geometic_ans").value = ans
     }
 }
 
