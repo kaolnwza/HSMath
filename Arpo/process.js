@@ -1,7 +1,4 @@
-function forMap(value){
-    return Number(value)
-}
-
+//ใช้เพื่อนับค่า want ใน array ที่ต้องการว่ามีกี่ตัว Argument: Number, array | return: Number
 function count(want, array){
     var i;
     var count = 0
@@ -13,6 +10,12 @@ function count(want, array){
     return count
 }
 
+//ใช้เพื่อหาค่า log ของ y ฐาน x | return: Number
+function getBaseLog(x, y) {
+    return Math.log(y) / Math.log(x);
+}
+
+//ใช้เพื่อหา set(ไม่มีตัวซ้ำใน array) Argument: array | return: array
 function set(array){
     var i, check, newArray;
     newArray = []
@@ -24,6 +27,55 @@ function set(array){
     }
     return newArray
 }
+
+//ใช้เพื่อหาค่าตาม 3 เหลี่ยมพาสคาล ใช้ในทฤษฎีบททวินาม(Binomial Theorem) | return: array
+function trianglePascal_n(num){
+    var round, value, now_value
+    value = [1, 1]
+    for(round = 1; round <= num; round++){
+        now_value = []
+        for(posi = 1; posi < round; posi++){
+            now_value.push(value[posi]+value[posi-1])
+        }
+        now_value.unshift(1)
+        now_value.push(1)
+        value = now_value
+    }
+    return value
+}
+
+//ใช้เพื่อหาค่า log ของ y ฐาน x | return: Number
+function getBaseLog(x, y) {
+    return Math.log(y) / Math.log(x);
+  }
+
+function loveYou(){
+    var person1 = document.forms["twoPerson"]["person1"].value;
+    var person2 = document.forms["twoPerson"]["person2"].value;
+    var answer = person1+" love "+person2
+    document.getElementById("love").value = answer;
+    return false
+}
+
+
+// Calculation page
+function plusJs(){
+    var a, b, c;
+    a = Number(document.forms["plusForms"]["numAPlus"].value);
+    b = Number(document.forms["plusForms"]["numBPlus"].value);
+    c = a+b;
+    document.getElementById("plus").innerHTML = c;
+    return false
+}
+function minusJs(){
+    var a, b, c;
+    a = Number(document.forms["minusForms"]["numAMinus"].value);
+    b = Number(document.forms["minusForms"]["numBMinus"].value);
+    c = a-b;
+    document.getElementById("minus").innerHTML = c;
+    return false
+}
+
 
 //7.เวกเตอร์ 2 มิติ 3 มิติ
 //Vector 2D size (หาขนาดของเวกเตอร์ 2 มิติ)
@@ -61,7 +113,7 @@ function mode(){
     var mostFrequency1, mostFrequency2, mostFrequency3
     var indexFre1, indexFre2
     numSet = []
-    values = (document.forms["modeForms"]["values"].value).split(" ").map(forMap)
+    values = (document.forms["modeForms"]["values"].value).split(" ").map(Number)
     valueSet = set(values)
     for(i in valueSet){
         total = count(valueSet[i], values)
@@ -95,6 +147,33 @@ function mode(){
 }
 
 
+// 14.ฟังก์ชันเอกโพซ์เนนเชียล และฟังก์ชันลอการิทึม
+//Exponential
+function findExponential(){
+    var value, power, ans
+    value = eval(document.forms["Exponential_form"]["value"].value)
+    power = eval(document.forms["Exponential_form"]["power"].value)
+    ans = Math.pow(value, power)
+    if(1>ans>0){
+        document.getElementById("featureExpo").innerHTML = "Decreasing function"
+    }else if(ans>1){
+        document.getElementById("featureExpo").innerHTML = "Increasing function"
+    }else{
+        document.getElementById("featureExpo").innerHTML = "Isn't exponential function"
+    }
+    document.getElementById("exponential").innerHTML = ans
+    return false
+}
+
+
+//Logarithm(Fundamental)
+function findLog(){
+    var value, base
+    value = Number(document.forms["Logarithm_form"]["value_x"].value)
+    base = Number(document.forms["Logarithm_form"]["value_y"].value)
+    document.getElementById("log").innerHTML = getBaseLog(base, value)
+    return false
+}
 
 
 //15.วิธีเรียงสับเปลี่ยน, ความน่าจะเป็น, ทฤษฎีบทวินาม
@@ -115,7 +194,7 @@ function linearPer1(){
 
 //สับเปลี่ยนเชิงเส้น มีตัวซ้ำ
 function linearPer2(){
-    var num, ans, divideNum, i, devide
+    var num, ans, divideNum, i, divide
     ans = 1
     i = 1
     divide = 1
@@ -160,25 +239,24 @@ function  probability(){
     return false
 }
 
-//ลําดับอนุกรม(ลําดับจํากัด)(DEV by Ping)
-function sequence(){
-    var ans, numa1, numa2, numn, numd //หาพจน์ที่ N แบบธรรมดา
-    numa1 = Number(document.forms["sequenceForms"]["num_sequencea1"].value)
-    numa2 = Number(document.forms["sequenceForms"]["num_sequencea2"].value)
-    numd = numa2-numa1
-    ans = numa1+(numn-1)*numd
-    document.getElementById("sequence_ans").innerHTML = ans
-    return false
-}
 
-//ลําดับอนุกรม(อนุกรมเลขคณิต)(DEV by Ping)
-function arithmetic_sequence(){
-    var ans, numa1, numa2, numa3, numn//หาลําดับอนุกรม
-    numa1 = Number(document.forms["arithmeticForms"]["num_arithmetica1"].value)
-    numa2 = Number(document.forms["arithmeticForms"]["num_arithmetica2"].value)
-    numa3 = Number(document.forms["arithmeticForms"]["num_arithmetica3"].value)
-    numn = Number(document.forms["arithmeticForms"]["num_arithmeticnn"].value)
-    ans = (numn/2)*(numa1+numn)
-    document.getElementById("arithmetic_ans").innerHTML = ans
+//ทฤษฎีบททวินาม(Binomial Theorem)
+function bioTheorem(){
+    var num = Number(document.forms["Binomial_Theorem_form"]["exponent"].value)
+    var i, data, aExponent, bExponent, constant
+    data = []
+    for(i = 0; i <= num; i++){
+        aExponent = num-i
+        bExponent = i
+        constant = trianglePascal_n(num)
+        if(i == 0){
+            data.push("a<sup>" + aExponent.toString() + "</sup>")
+        }else if(i == num){
+            data.push("b<sup>" + bExponent.toString() + "</sup>")
+        }else{
+            data.push(constant[i] + "a<sup>" + aExponent.toString() + "</sup>b<sup>" + bExponent.toString() + "</sup>")
+        }
+    }
+    document.getElementById("binomial_theorem").innerHTML = data.join(" + ")
     return false
 }

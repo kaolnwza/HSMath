@@ -23,7 +23,12 @@ function set(array){
     return newArray
 }
 
-//ใช้เพื่อหาค่าตาม 3 เหลี่ยมพาสคาล ใช้ในทฤษฎีบททวินาม(Binomial Theorem) | return: array
+//ใช้เพื่อหาค่า log ของ y ฐาน x Argument: Number, Number | return: Number
+function getBaseLog(x, y) {
+    return Math.log(y) / Math.log(x);
+}
+
+//ใช้เพื่อหาค่าตาม 3 เหลี่ยมพาสคาล ใช้ในทฤษฎีบททวินาม(Binomial Theorem) Argument: Number | return: array
 function trianglePascal_n(num){
     var round, value, now_value
     value = [1, 1]
@@ -38,7 +43,6 @@ function trianglePascal_n(num){
     }
     return value
 }
-
 
 
 
@@ -69,6 +73,47 @@ function vector3D(){
     document.getElementById("vector_size3D").innerHTML = size
     return false
 }
+
+
+
+
+// 14.ฟังก์ชันเอกโพซ์เนนเชียล และฟังก์ชันลอการิทึม
+//Exponential
+function findExponential(){
+    var value, power, ans
+    value = eval(document.forms["Exponential_form"]["value"].value)
+    power = eval(document.forms["Exponential_form"]["power"].value)
+    ans = Math.pow(value, power)
+    if(1>ans>0){
+        document.getElementById("featureExpo").innerHTML = "Decreasing function"
+    }else if(ans>1){
+        document.getElementById("featureExpo").innerHTML = "Increasing function"
+    }else{
+        document.getElementById("featureExpo").innerHTML = "Isn't exponential function"
+    }
+    document.getElementById("exponential").innerHTML = ans
+    return false
+}
+
+
+//Logarithm(Fundamental)
+function findLog(){
+    var value, base
+    value = document.forms["Logarithm_form"]["value_x"].value
+    base = document.forms["Logarithm_form"]["value_y"].value
+    if(value == "e"){
+        value = 2.7182818
+    }
+    if(base == "e"){
+        base = 2.7182818
+    }
+    value = eval(value)
+    base = eval(base)
+    document.getElementById("log").innerHTML = getBaseLog(base, value)
+    return false
+}
+
+
 
 //15.วิธีเรียงสับเปลี่ยน, ความน่าจะเป็น, ทฤษฎีบทวินาม
 //วิธีเรียงสับเปลี่ยน
@@ -154,182 +199,55 @@ function bioTheorem(){
     return false
 }
 
-//ลําดับอนุกรม(ลําดับจํากัด)(DEV by Ping)
+//ลําดับอนุกรม(ลําดับจํากัด(ลําดับเลขคณิต))(DEV by Ping)
 function sequence(){
-    var ans, numa1, numa2, numn, numd //หาพจน์ที่ N แบบธรรมดา
-    numa1 = Number(document.forms["sequenceForms"]["num_sequencea1"].value)
-    numa2 = Number(document.forms["sequenceForms"]["num_sequencea2"].value)
-    numd = numa2-numa1
-    ans = numa1+(numn-1)*numd
-    document.getElementById("sequence_ans").innerHTML = ans
+    var ans, a1, a2, n, d //หาพจน์ที่ N แบบธรรมดา an = a1+(n-1)d
+    a1 = Number(document.forms["sequenceForms"]["num_sequencea1"].value) //numa1 = a1
+    a2 = Number(document.forms["sequenceForms"]["num_sequencea2"].value) //numa2 = a2
+    n = Number(document.forms["sequenceForms"]["num_sequencenn"].value) // numn = n
+    d = a2-a1 // numd = d
+    ans = a1+(n-1)*d // an = a1+(n-1)d
+    document.getElementById("sequence_ans").value = ans
     return false
+}
+
+//ลําดับเรขาคณิต(DEV by Ping)
+function sequence2(){
+    var ans, a1, a2, a3, r, n //หาลําดับเรขาคณิต
+    a1 = Number(document.forms["sequenceForms2"]["num_sequence2a1"].value) //numa1 = a1
+    a2 = Number(document.forms["sequenceForms2"]["num_sequence2a2"].value) //numa2 = a2
+    a3 = Number(document.forms["sequenceForms2"]["num_sequence2a3"].value) //numa3 = a3
+    r = Number(document.forms["sequenceForms2"]["num_sequence2nr"].value) //numr = r
+    n = Number(document.forms["sequenceForms2"]["num_sequence2nn"].value) //numn = n
+    ans = a1*(r**(n-1)) //a1*(r**(n-1))
+    document.getElementById("sequence2_ans").value = ans
 }
 
 //ลําดับอนุกรม(อนุกรมเลขคณิต)(DEV by Ping)
 function arithmetic_sequence(){
-    var ans, numa1, numa2, numa3, numn//หาลําดับอนุกรม
-    numa1 = Number(document.forms["arithmeticForms"]["num_arithmetica1"].value)
-    numa2 = Number(document.forms["arithmeticForms"]["num_arithmetica2"].value)
-    numa3 = Number(document.forms["arithmeticForms"]["num_arithmetica3"].value)
-    numn = Number(document.forms["arithmeticForms"]["num_arithmeticnn"].value)
-    ans = (numn/2)*(numa1+numn)
-    document.getElementById("arithmetic_ans").innerHTML = ans
+    var ans, a1, a2, a3, n//หาลําดับอนุกรม
+    a1 = Number(document.forms["arithmeticForms"]["num_arithmetica1"].value) //numa1 = a1
+    a2 = Number(document.forms["arithmeticForms"]["num_arithmetica2"].value) //numa2 = a2
+    a3 = Number(document.forms["arithmeticForms"]["num_arithmetica3"].value) //numa3 = a3
+    n = Number(document.forms["arithmeticForms"]["num_arithmeticnn"].value) //numn = an
+    ans = (numn/2)*(numa1+numn) //สูตร sn = n/2(a1+an)
+    document.getElementById("arithmetic_ans").value = ans
     return false
 }
 
 //ลําดับอนุกรม(อนุกรมเรขาคณิต)(DEV by Ping)
 function arithmetic_geometic(){
     var input_done, numn, numr //หาลําดับเรขาคณิต
-    input_done
-    numn = Number(document.forms["geometicForms"]["num_geometicnn"].value)
-    numr = input_done[input_done.length-1]/input_done[input_done.length-2]
+    input_done //รอการแก้บัคโดยเก้าเดาว่าเป็น an
+    numn = Number(document.forms["geometicForms"]["num_geometicnn"].value)//numn = n(เลขชี้กําลัง)
+    numr = input_done[input_done.length-1]/input_done[input_done.length-2]//numr = r
     if (numr < 1){
-        ans = (input_done[0]*(1-(numr**numn)))/1-numr
-        document.getElementById("geometic_ans").innerHTML = ans
+        ans = (input_done[0]*(1-(numr**numn)))/1-numr//sn = a1*(1-(r**n))/1-r
+        document.getElementById("geometic_ans").value = ans
     }else if (numr > 1){
-        ans = (input_done[0]*((numr**numn)-1))/numr-1
-        document.getElementById("geometic_ans").innerHTML = ans
+        ans = (input_done[0]*((numr**numn)-1))/numr-1//sn = a1*((r**n)-1)/1-r
+        document.getElementById("geometic_ans").value = ans
     }
-}
-
-//สถิติ
-function static() {
-    var input;
-    var med = 0,
-        mode,
-        xbar = 0,
-        sam = 0;
-    var input_notdone,
-        input_done = [];
-    var sd_sigma,
-        sd_saved = 0,
-        sd_s,
-        sd_up2;
-
-    // part of input
-    input = document.forms["input_form"]["inputval"].value
-        .split(" ")
-        .filter(val => val != "")
-        .map(Number);
-
-    for (i = 0; i < input.length; i++) {
-        if (!isNaN(input[i])) {
-            input_done.push(input[i]);
-        }
-    }
-    // end of input part
-
-    // xbar
-    sam = 0;
-    xbar = 0;
-    for (i = 0; i < input_done.length; i++) {
-        sam = sam + input_done[i];
-    }
-    xbar = sam / input_done.length;
-    // end of xbar
-
-    // median
-    if (input_done.length % 2 !== 0) {
-        med = input_done[Math.floor(input_done.length / 2)];
-    } else if (input_done.length % 2 === 0) {
-        med =
-            (input_done[Math.floor(input_done.length / 2) - 1] +
-                input_done[Math.floor(input_done.length / 2)]) /
-            2;
-    }
-    // end of median
-
-    // S.D.(sigma)
-    for (i = 0; i < input_done.length; i++) {
-        sd_saved = sd_saved + (input_done[i] - xbar) ** 2;
-    }
-    sd_sigma = (sd_saved / input_done.length) ** 0.5;
-    // end of S.D.(sigma)
-
-    // S.D.(s)
-    sd_s = (sd_saved / (input_done.length - 1)) ** 0.5;
-    // end of S.D.(s)
-
-    // S.D. up 2
-    sd_up2 = sd_saved / input_done.length;
-    // end of S.D. up 2
-
-    //Mode
-    function count(want, array) {
-        var i;
-        var count = 0
-        for (i in array) {
-            if (array[i] == want) {
-                count++;
-            }
-        }
-        return count
-    }
-
-    function set(array) {
-        var i, check, newArray;
-        newArray = []
-        for (i in array) {
-            check = newArray.includes(array[i])
-            if (!check) {
-                newArray.push(array[i])
-            }
-        }
-        return newArray
-    }
-
-    var values, valueSet, i_val, numSet, total;
-    var mostFrequency1, mostFrequency2, mostFrequency3;
-    var indexFre1, indexFre2;
-    numSet = []
-    values = input_done;
-    valueSet = set(values)
-    for (i_val in valueSet) {
-        total = count(valueSet[i_val], values)
-        numSet.push(total);
-    }
-    mostFrequency1 = Math.max(...numSet)
-    indexFre1 = numSet.indexOf(mostFrequency1)
-    numSet[indexFre1] = 0;
-    mostFrequency2 = Math.max(...numSet)
-    indexFre2 = numSet.indexOf(mostFrequency2)
-    numSet[indexFre2] = 0
-    if (valueSet.length == 2) {
-        if (mostFrequency1 > mostFrequency2) {
-            document.getElementById("mode_id").value = valueSet[indexFre1]
-        } else if (mostFrequency1 == mostFrequency2) {
-            document.getElementById("mode_id").value = valueSet[indexFre1].toString() + " and " + valueSet[indexFre2].toString()
-        } else {
-            document.getElementById("mode_id").value = "Don't have mode"
-        }
-    } else {
-        mostFrequency3 = Math.max(...numSet)
-        if (mostFrequency1 > mostFrequency2) {
-            document.getElementById("mode_id").value = valueSet[indexFre1]
-        } else if (mostFrequency1 == mostFrequency2 && mostFrequency1 > mostFrequency3) {
-            document.getElementById("mode_id").value = valueSet[indexFre1].toString() + " and " + valueSet[indexFre2].toString()
-        } else {
-            document.getElementById("mode_id").value = "Don't have mode"
-        }
-    }
-
-    document.getElementById("xbar_id").value = xbar;
-    document.getElementById("med_id").value = med;
-    document.getElementById("sd_sigma_id").value = sd_sigma;
-    document.getElementById("sd_s_id").value = sd_s;
-    document.getElementById("sd_up2_id").value = sd_up2;
-    document.getElementById("sorted_id").value = String(
-        input_done.sort()
-    ).split(",");
-    document.getElementById("count_id").value = input_done.length;
-    document.getElementById("sum_id").value = input_done.reduce(
-        (x1, x2) => x1 + x2
-    );
-    document.getElementById("max_val_id").value =
-        input_done[input_done.length - 1];
-    document.getElementById("min_val_id").value = input_done[0];
-    //document.getElementById("mode_id").value = ;
-    document.getElementById("tss").value = test;
 }
 
 //เซ็ต
