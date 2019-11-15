@@ -382,9 +382,15 @@ function static() {
 //union
 function union(){
     var input_a, input_b, input_c, ans, set_a, set_b, set_c
-    input_a = (document.forms["union_set"]["union_set1"].value).split(" ").map(Number)
-    input_b = (document.forms["union_set"]["union_set2"].value).split(" ").map(Number)
-    input_c = (document.forms["union_set"]["union_set3"].value).split(" ").map(Number)
+    input_a = (document.forms["union_set"]["union_set1"].value).split(" ").split(" ")
+        .filter(val => val != "")
+        .map(Number);
+    input_b = (document.forms["union_set"]["union_set2"].value).split(" ").split(" ")
+        .filter(val => val != "")
+        .map(Number);
+    input_c = (document.forms["union_set"]["union_set3"].value).split(" ").split(" ")
+        .filter(val => val != "")
+        .map(Number); //gu add more input filter
     set_a = set(input_a)
     set_b = set(input_b)
     set_c = set(input_c)
