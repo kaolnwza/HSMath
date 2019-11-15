@@ -257,19 +257,34 @@ function union(){
     input_a = (document.forms["union_set"]["union_set1"].value).split(" ").map(Number)
     input_b = (document.forms["union_set"]["union_set2"].value).split(" ").map(Number)
     input_c = (document.forms["union_set"]["union_set3"].value).split(" ").map(Number)
-    set_a = set(input_a)
-    set_b = set(input_b)
-    set_c = set(input_c)
+    set_a = new Set([input_a])
+    set_b = new Set([input_b])
+    set_c = new Set([input_c])
     if(input_c != ""){
         //ถ้า C ไม่ว่าง
         union1 = ([set_a, set_b])
         ans = ([union1, input_c])
-        document.getElementById("union_set").innerHTML = ans
+        document.getElementById("union_set").innerHTML = ans_union
     }else if(input_c == ""){
         //ถ้า C ว่าง
         ans = ([set_a, set_b])
-        document.getElementById("union_set").innerHTML = ans
-    }else if(input_a == "" || input_b == "")
+        document.getElementById("union_set").innerHTML = ans_union
+    }else if(input_a == "" || input_b == "" )
         document.write("NULL")
     return false
+}
+
+//intersec
+function intersec(){
+    var input_a, input_b, input_c, ans, set_a, set_b, set_c
+    input_a = (document.forms["intersec_set"]["intersec_set1"].value).split(" ").map(Number)
+    input_b = (document.forms["intersec_set"]["intersec_set2"].value).split(" ").map(Number)
+    input_c = (document.forms["intersec_set"]["intersec_set3"].value).split(" ").map(Number)
+    set_a = new Set([input_a])
+    set_b = new Set([input_b])
+    set_c = new Set([input_c])
+    if(input_c != ""){
+        //ถ้า C ไม่ว่าง
+       intersec1 = (set_a.filter(x => set_b.has(x)))
+    }
 }
