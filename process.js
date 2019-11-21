@@ -319,3 +319,52 @@ function difference(){
         document.write("NULL")
     return false
 }
+
+//การหาระยะห่างระหว่างจุดกับจุด
+function distance2point() {
+    var input_x1, input_x2, input_y1, input_y2, distance
+    input_x1 = document.forms["distance2point"]["distance2point_x1"].value
+    input_x2 = document.forms["distance2point"]["distance2point_x2"].value
+    input_y1 = document.forms["distance2point"]["distance2point_y1"].value
+    input_y2 = document.forms["distance2point"]["distance2point_y2"].value
+    distance = ((inputx2 - inputx1) ** 2 + (inputy2 - inputy1) ** 2) ** 0.5
+    //root((x2-x1)^2 + (y2-y1)^2))
+    document.getElementById("distance2point_output").innerHTML = distance
+}
+
+//การหาระยะห่างระหว่างจุดกับเส้นตรง
+function distance_line() {
+    var input_x, input_y, input_a, input_y, input_c, distance_line
+    input_x = document.forms["distance_line"]["distance_line_x"].value
+    input_y = document.forms["distance_line"]["distance_line_y"].value
+    input_a = document.forms["distance_line"]["distance_line_a"].value
+    input_b = document.forms["distance_line"]["distance_line_b"].value
+    input_c = document.forms["distance_line"]["distance_line_c"].value
+    distance_line = abs(input_a * input_x + input_b * input_y + input_c) / (input_a ** 2 + input_b ** 2) ** 0.5
+    // | Ax + Bx + C | / root(A^2 + B^2)
+    document.getElementById("distance_line_output").innerHTML = distance_line
+}
+
+//การหาระยะห่างระหว่างเส้นคู่ขนาน
+function distance_parallel() {
+    var input_c1, input_c2, input_a, input_b, distance_parallel
+    input_c1 = document.forms["distance_parallel"]["distance_parallel_c1"].value
+    input_c1 = document.forms["distance_parallel"]["distance_parallel_c1"].value
+    input_c1 = document.forms["distance_parallel"]["distance_parallel_c1"].value
+    input_c1 = document.forms["distance_parallel"]["distance_parallel_c1"].valueฃ
+    distance_parallel = abs(input_c1 - input_c2) / (input_a ** 2 + input_b ** 2) ** 0.5
+    //| C2 - C1 | / root(A^2 + B^2)
+    document.getElementById("distance_parallel_output").innerHTML = distance_parallel
+}
+
+//หาความชัน
+function slope2point() {
+    var input_x1, input_x2, input_y1, input_y2, slope2point_value
+    input_x1 = document.forms["slope2point"]["slope2point_x1"].value
+    input_x2 = document.forms["slope2point"]["slope2point_x2"].value
+    input_y1 = document.forms["slope2point"]["slope2point_y1"].value
+    input_y2 = document.forms["slope2point"]["slope2point_y2"].value
+    slope2point_value = (input_y1 - input_y2) / (input_x1 - input_x2)
+    //d(X) / d(Y), d = delta
+    document.getElementById("slope2point_output") = slope2point_value
+}
