@@ -10,11 +10,6 @@ function count(want, array){
     return count
 }
 
-//ใช้เพื่อหาค่า log ของ y ฐาน x | return: Number
-function getBaseLog(x, y) {
-    return Math.log(y) / Math.log(x);
-}
-
 //ใช้เพื่อหา set(ไม่มีตัวซ้ำใน array) Argument: array | return: array
 function set(array){
     var i, check, newArray;
@@ -169,8 +164,16 @@ function findExponential(){
 //Logarithm(Fundamental)
 function findLog(){
     var value, base
-    value = Number(document.forms["Logarithm_form"]["value_x"].value)
-    base = Number(document.forms["Logarithm_form"]["value_y"].value)
+    value = document.forms["Logarithm_form"]["value_x"].value
+    base = document.forms["Logarithm_form"]["value_y"].value
+    if(value == "e"){
+        value = 2.7182818
+    }
+    if(base == "e"){
+        base = 2.7182818
+    }
+    value = eval(value)
+    base = eval(base)
     document.getElementById("log").innerHTML = getBaseLog(base, value)
     return false
 }
@@ -258,5 +261,40 @@ function bioTheorem(){
         }
     }
     document.getElementById("binomial_theorem").innerHTML = data.join(" + ")
+    return false
+}
+
+
+//5.เมทริกซ์(Matrix)
+//plus and minus matrix(2*2)
+function plus_minusMatrix(){
+    var matA_11, matA_12, matA_21, matA_22
+    var matB_11, matB_12, matB_21, matB_22
+    var plus_minus = document.forms["plus_matrix22_form"]["plus_minus"].value
+
+    //matAB_11, matAB_12, matAB_21, matAB_22
+    //input matrix A 
+    matA_11 = eval(document.forms["plus_matrix22_form"]["matA_11"].value)
+    matA_12 = eval(document.forms["plus_matrix22_form"]["matA_12"].value)
+    matA_21 = eval(document.forms["plus_matrix22_form"]["matA_21"].value)
+    matA_22 = eval(document.forms["plus_matrix22_form"]["matA_22"].value)
+
+    //input matrix B
+    matB_11 = eval(document.forms["plus_matrix22_form"]["matB_11"].value)
+    matB_12 = eval(document.forms["plus_matrix22_form"]["matB_12"].value)
+    matB_21 = eval(document.forms["plus_matrix22_form"]["matB_21"].value)
+    matB_22 = eval(document.forms["plus_matrix22_form"]["matB_22"].value)
+
+    if(plus_minus == "-"){
+        matB_11 = 0-matB_11
+        matB_12 = 0-matB_12
+        matB_21 = 0-matB_21
+        matB_22 = 0-matB_22
+    }
+    document.getElementById("22matAB_11").value = matA_11 + matB_11
+    document.getElementById("22matAB_12").value = matA_12 + matB_12
+    document.getElementById("22matAB_21").value = matA_21 + matB_21
+    document.getElementById("22matAB_22").value = matA_22 + matB_22
+
     return false
 }

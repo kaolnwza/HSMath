@@ -131,12 +131,50 @@
     </div>
 
     <div class="box">
-        <form name="Exponential_form" onsubmit="return findExponential()">
-        <p><strong>Exponential <input type="submit" value="calculate"></strong><br>
-            a<sup>x</sup> = <strong id="exponential">Ans</strong><br>
-            Feature: <strong id="featureExpo">Ans</strong><br>
-            a = <input type="text" name="value" placeholder="static value"><br>
-            x = <input type="text" name="power" placeholder="power">
+            <form name="Exponential_form" onsubmit="return findExponential()">
+            <p><strong>Exponential <input type="submit" value="calculate"></strong><br>
+                a<sup>x</sup> = <strong id="exponential">Ans</strong><br>
+                Feature: <strong id="featureExpo">Ans</strong><br>
+                a = <input type="text" name="value" placeholder="static value"><br>
+                x = <input type="text" name="power" placeholder="power">
+            </p>
+            </form>
+        </div>
+<!-- https://ncalculators.com/matrix/2x2-matrix-multiplication-calculator.htm -->
+    <div class="box">
+        <form name="plus_matrix22_form" onsubmit="return plus_minusMatrix()">
+        <p><strong>Matrix plus <input type="submit" value="calculate"></strong><br>
+            <!-- <input type="text" name="plus_minus" placeholder="+/-" style="text-align: center;"> -->
+            <select name="plus_minus" required>
+                <option value="+">+</option>
+                <option value="-">-</option>
+            </select>
+            <div style="width: 100%;">
+                <div style="width: 50%; float: left;">
+                    matrix A (2x2)
+                    <div>
+                    <input type="text" name="matA_11"> <input type="text" name="matA_12"><br>
+                    <input type="text" name="matA_21"> <input type="text" name="matA_22">
+                    </div>
+                </div>
+                <div>
+                    
+                </div>
+                <div style="display: inline;">
+                    matrix B (2x2)
+                    <div>
+                    <input type="text" name="matB_11"> <input type="text" name="matB_12"><br>
+                    <input type="text" name="matB_21"> <input type="text" name="matB_22">
+                    </div>
+                </div>
+            </div><hr>
+            <div style="display: inline;">
+                <strong>Answer</strong> matrix (2x2)
+                <div>
+                <input id="22matAB_11" placeholder="ans" readonly style="text-align: center;"> <input id="22matAB_12" placeholder="ans" readonly style="text-align: center;"><br>
+                <input id="22matAB_21" placeholder="ans" readonly style="text-align: center;"> <input id="22matAB_22" placeholder="ans" readonly style="text-align: center;">
+                </div>
+            </div>
         </p>
         </form>
     </div>
