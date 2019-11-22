@@ -368,3 +368,40 @@ function slope2point() {
     //d(X) / d(Y), d = delta
     document.getElementById("slope2point_output") = slope2point_value
 }
+
+//หาจุดแบ่งงภายในส่วนของเส้นตรง (หาจุดกึ่งกลางระหว่างจุด)
+function point_center() {
+    var input_x1, input_x2, input_y1, input_y2, point_center_x, point_center_y
+    input_x1 = document.forms["point_center"]["point_center_x1"].value
+    input_x2 = document.forms["point_center"]["point_center_x2"].value
+    input_y1 = document.forms["point_center"]["point_center_y1"].value
+    input_y2 = document.forms["point_center"]["point_center_y2"].value
+    point_center_x = (input_x1 + input_x2) / 2
+    point_center_y = (input_y1 + input_y2) / 2
+    //((x1 + x2) / 2, (y1, y2) / 2)
+    document.getElementById("point_center_x_output").innerHTML = point_center_x
+    document.getElementById("point_center_y_output").innerHTML = point_center_y
+    //answer is (point_center_x, point_center_y) like (0, 0) or (3, 2)
+}
+
+//หาจุดตัดของงเส้นมัธยฐาน (จุด 3 จุด)
+function point_center_3() {
+    var input_x1, input_x2, input_x3, input_y1, input_y2, input_y3, point_center_x, point_center_y
+    input_x1 = document.forms["point_center"]["point_center_x1"].value
+    input_x2 = document.forms["point_center"]["point_center_x2"].value
+    input_x3 = document.forms["point_center"]["point_center_x3"].value
+    input_y1 = document.forms["point_center"]["point_center_y1"].value
+    input_y2 = document.forms["point_center"]["point_center_y2"].value
+    input_y3 = document.forms["point_center"]["point_center_y3"].value
+    point_center_x = (input_x1 + input_x2) / 3
+    point_center_y = (input_y1 + input_y2) / 3
+    //((x1 + x2 + x3) / 3, (y1 + y2 + y3) / 3)
+    document.getElementById("point_center_x_output").innerHTML = point_center_x
+    document.getElementById("point_center_y_output").innerHTML = point_center_y
+    //answer is (point_center_x, point_center_y) like (0, 0) or (3, 2)
+}
+
+//หาพื้นที่รูป n เหลี่ยมใดๆ
+function edge_area_infinite() {
+
+}
