@@ -45,6 +45,39 @@ function trianglePascal_n(num){
 }
 
 
+//5.เมทริกซ์(Matrix)
+//plus and minus matrix(2*2)
+function plus_minusMatrix(){
+    var matA_11, matA_12, matA_21, matA_22
+    var matB_11, matB_12, matB_21, matB_22
+    var plus_minus = document.forms["plus_matrix22_form"]["plus_minus"].value
+
+    //input matrix A 
+    matA_11 = eval(document.forms["plus_matrix22_form"]["matA_11"].value)
+    matA_12 = eval(document.forms["plus_matrix22_form"]["matA_12"].value)
+    matA_21 = eval(document.forms["plus_matrix22_form"]["matA_21"].value)
+    matA_22 = eval(document.forms["plus_matrix22_form"]["matA_22"].value)
+
+    //input matrix B
+    matB_11 = eval(document.forms["plus_matrix22_form"]["matB_11"].value)
+    matB_12 = eval(document.forms["plus_matrix22_form"]["matB_12"].value)
+    matB_21 = eval(document.forms["plus_matrix22_form"]["matB_21"].value)
+    matB_22 = eval(document.forms["plus_matrix22_form"]["matB_22"].value)
+
+    if(plus_minus == "-"){
+        matB_11 = 0-matB_11
+        matB_12 = 0-matB_12
+        matB_21 = 0-matB_21
+        matB_22 = 0-matB_22
+    }
+    document.getElementById("22matAB_11").value = matA_11 + matB_11
+    document.getElementById("22matAB_12").value = matA_12 + matB_12
+    document.getElementById("22matAB_21").value = matA_21 + matB_21
+    document.getElementById("22matAB_22").value = matA_22 + matB_22
+
+    return false
+}
+
 
 //7.เวกเตอร์ 2 มิติ 3 มิติ
 //Vector 2D size (หาขนาดของเวกเตอร์ 2 มิติ)
