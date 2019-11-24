@@ -1,1 +1,1 @@
-ไปแก้ใน /web/process.js 
+ไปแก้ใน /web/script/ 
