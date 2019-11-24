@@ -142,19 +142,52 @@
         </div>
 <!-- https://ncalculators.com/matrix/2x2-matrix-multiplication-calculator.htm -->
     <div class="box">
-        <form name="plus_matrix22_form" onsubmit="return plus_minusMatrix()">
-        <p><strong>Matrix plus <input type="submit" value="calculate"></strong><br>
-            <!-- <input type="text" name="plus_minus" placeholder="+/-" style="text-align: center;"> -->
+        <form name="plus_minus_matrix22_form" onsubmit="return plus_minusMatrix()">
+        <p><strong>+/- Matrix <input type="submit" value="calculate"></strong><br>
+            <!-- <input type="text" name="member" placeholder="n*n"> -->
+            <select name="member_matrix" onchange="form_Plus_minusMatrix()" required>
+                <option value="2">Matrix 2x2</option>
+                <option value="3">Matrix 3x3</option>
+            </select>
             <select name="plus_minus" required>
                 <option value="+">+</option>
                 <option value="-">-</option>
             </select>
-            <div style="width: 100%;">
+
+            <div id="plus_minus_matrix">
+                <div style='width: 100%;'>
+                    <div style='width: 50%; float: left;'>
+                        matrix A (2x2)
+                        <div>
+                            <input type='text' name='matA_11'> <input type='text' name='matA_12'><br>
+                            <input type='text' name='matA_21'> <input type='text' name='matA_22'>
+                        </div>
+                    </div>
+                    <div style='display: inline;'>
+                        matrix B (2x2)
+                        <div>
+                            <input type='text' name='matB_11'> <input type='text' name='matB_12'><br>
+                            <input type='text' name='matB_21'> <input type='text' name='matB_22'>
+                        </div>
+                    </div>
+                </div>
+                <div style='display: inline;'>
+                    <strong>Answer</strong> matrix (2x2)
+                    <div>
+                        <input id='matAB_11' placeholder='ans' readonly style='text-align: center;'>
+                        <input id='matAB_12' placeholder='ans' readonly style='text-align: center;'><br>
+                        <input id='matAB_21' placeholder='ans' readonly style='text-align: center;'>
+                        <input id='matAB_22' placeholder='ans' readonly style='text-align: center;'>
+                    </div>
+                </div>
+            </div>
+            <!-- <div style="width: 100%;">
                 <div style="width: 50%; float: left;">
                     matrix A (2x2)
                     <div>
-                    <input type="text" name="matA_11"> <input type="text" name="matA_12"><br>
-                    <input type="text" name="matA_21"> <input type="text" name="matA_22">
+                    <input type="text" name="matA_11"> <input type="text" name="matA_12"> <input type="text" name="matA_13"><br>
+                    <input type="text" name="matA_21"> <input type="text" name="matA_22"> <input type="text" name="matA_23"><br>
+                    <input type="text" name="matA_31"> <input type="text" name="matA_32"> <input type="text" name="matA_33"><br>
                     </div>
                 </div>
                 <div>
@@ -163,18 +196,23 @@
                 <div style="display: inline;">
                     matrix B (2x2)
                     <div>
-                    <input type="text" name="matB_11"> <input type="text" name="matB_12"><br>
-                    <input type="text" name="matB_21"> <input type="text" name="matB_22">
+                    <input type="text" name="matB_11"> <input type="text" name="matB_12"> <input type="text" name="matB_13"><br>
+                    <input type="text" name="matB_21"> <input type="text" name="matB_22"> <input type="text" name="matB_23"><br>
+                    <input type="text" name="matB_31"> <input type="text" name="matB_32"> <input type="text" name="matB_33"><br>
                     </div>
                 </div>
-            </div><hr>
+            </div>
+            <hr>
             <div style="display: inline;">
                 <strong>Answer</strong> matrix (2x2)
                 <div>
-                <input id="22matAB_11" placeholder="ans" readonly style="text-align: center;"> <input id="22matAB_12" placeholder="ans" readonly style="text-align: center;"><br>
-                <input id="22matAB_21" placeholder="ans" readonly style="text-align: center;"> <input id="22matAB_22" placeholder="ans" readonly style="text-align: center;">
+                <input id="matAB_11" placeholder="ans" readonly style="text-align: center;"> <input id="matAB_12" placeholder="ans" readonly style="text-align: center;"> <input id="matAB_13" placeholder="ans" readonly style="text-align: center;"><br>
+                <input id="matAB_21" placeholder="ans" readonly style="text-align: center;"> <input id="matAB_22" placeholder="ans" readonly style="text-align: center;"> <input id="matAB_23" placeholder="ans" readonly style="text-align: center;"><br>
+                <input id="matAB_31" placeholder="ans" readonly style="text-align: center;"> <input id="matAB_32" placeholder="ans" readonly style="text-align: center;"> <input id="matAB_33" placeholder="ans" readonly style="text-align: center;"><br>
                 </div>
-            </div>
+            </div> -->
+
+            
         </p>
         </form>
     </div>
