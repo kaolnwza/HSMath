@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="/../script/analytic_geometry.js"></script>
+    <title>Document</title>
+  </head>
+  <style>
+    input[type="tarr"] {
+      width: 10%;
+      border: 2px solid #aaa;
+      border-radius: 4px;
+      margin: 2px 0;
+      padding: 4px;
+      box-sizing: border-box;
+      transition: 0.3s;
+    }
+  </style>
+  <body>
+    <form name="distance2point_form">
+      <p>การหาระยะห่างระหว่างจุดกับจุด</p>
+      <input type="tarr" name="distance2point_x1" />
+      <input type="tarr" name="distance2point_x2" />
+      <input type="tarr" name="distance2point_y1" />
+      <input type="tarr" name="distance2point_y2" />
+
+      <p><input type="tarr" id="distance2point_output" readonly /></p>
+
+      <input type="button" value="GO" onclick="distance2point()" />
+    </form>
+
+    <form name="distance_line_form">
+      <p>การหาระยะห่างระหว่างจุดกับเส้นตรง</p>
+      <input type="tarr" name="distance_line_x" />
+      <input type="tarr" name="distance_line_y" />
+      <input type="tarr" name="distance_line_a" />
+      <input type="tarr" name="distance_line_b" />
+      <input type="tarr" name="distance_line_c" />
+
+      <p><input type="tarr" id="distance_line_output" readonly /></p>
+
+      <input type="button" value="GO" onclick="distance_line()" />
+    </form>
+
+    <form name="distance_parallel_form">
+      <p>การหาระยะห่างระหว่างเส้นคู่ขนาน</p>
+      <input type="tarr" name="distance_parallel_c1" />
+      <input type="tarr" name="distance_parallel_c2" />
+      <input type="tarr" name="distance_parallel_a" />
+      <input type="tarr" name="distance_parallel_b" />
+
+      <p><input type="tarr" id="distance_parallel_output" readonly /></p>
+
+      <input type="button" value="GO" onclick="distance_parallel()" />
+    </form>
+
+    <form name="slope2point_form">
+      <p>หาความชัน</p>
+      <input type="tarr" name="slope2point_x1" />
+      <input type="tarr" name="slope2point_x2" />
+      <input type="tarr" name="slope2point_y1" />
+      <input type="tarr" name="slope2point_y2" />
+
+      <p><input type="tarr" id="slope2point_output" readonly /></p>
+
+      <input type="button" value="GO" onclick="slope2point()" />
+    </form>
+
+    <form name="point_center_form">
+      <p>หาจุดแบ่งงภายในส่วนของเส้นตรง (หาจุดกึ่งกลางระหว่างจุด)</p>
+      <input type="tarr" name="point_center_x1" />
+      <input type="tarr" name="point_center_x2" />
+      <input type="tarr" name="point_center_y1" />
+      <input type="tarr" name="point_center_y2" />
+
+      <p>
+        (<input type="tarr" id="point_center_x_output" readonly />,<input
+          type="tarr"
+          id="point_center_y_output"
+          readonly
+        />)
+      </p>
+
+      <input type="button" value="GO" onclick="point_center()" />
+    </form>
+
+    <form name="point_center3_form">
+      <p>หาจุดตัดของเส้นมัธยฐาน (จุด 3 จุด)</p>
+      <input type="tarr" name="point_center3_x1" />
+      <input type="tarr" name="point_center3_x2" />
+      <input type="tarr" name="point_center3_x3" />
+      <input type="tarr" name="point_center3_y1" />
+      <input type="tarr" name="point_center3_y2" />
+      <input type="tarr" name="point_center3_y3" />
+
+      <p>
+        (<input type="tarr" id="point_center3_x_output" readonly />,<input
+          type="tarr"
+          id="point_center3_y_output"
+          readonly
+        />)
+      </p>
+
+      <input type="button" value="GO" onclick="point_center_3()" />
+    </form>
+  </body>
+</html>
