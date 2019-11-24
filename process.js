@@ -50,19 +50,19 @@ function trianglePascal_n(num){
 function plus_minusMatrix(){
     var matA_11, matA_12, matA_21, matA_22
     var matB_11, matB_12, matB_21, matB_22
-    var plus_minus = document.forms["plus_matrix22_form"]["plus_minus"].value
+    var plus_minus = document.forms["plus_minus_matrix22_form"]["plus_minus"].value
 
     //input matrix A 
-    matA_11 = eval(document.forms["plus_matrix22_form"]["matA_11"].value)
-    matA_12 = eval(document.forms["plus_matrix22_form"]["matA_12"].value)
-    matA_21 = eval(document.forms["plus_matrix22_form"]["matA_21"].value)
-    matA_22 = eval(document.forms["plus_matrix22_form"]["matA_22"].value)
+    matA_11 = eval(document.forms["plus_minus_matrix22_form"]["matA_11"].value)
+    matA_12 = eval(document.forms["plus_minus_matrix22_form"]["matA_12"].value)
+    matA_21 = eval(document.forms["plus_minus_matrix22_form"]["matA_21"].value)
+    matA_22 = eval(document.forms["plus_minus_matrix22_form"]["matA_22"].value)
 
     //input matrix B
-    matB_11 = eval(document.forms["plus_matrix22_form"]["matB_11"].value)
-    matB_12 = eval(document.forms["plus_matrix22_form"]["matB_12"].value)
-    matB_21 = eval(document.forms["plus_matrix22_form"]["matB_21"].value)
-    matB_22 = eval(document.forms["plus_matrix22_form"]["matB_22"].value)
+    matB_11 = eval(document.forms["plus_minus_matrix22_form"]["matB_11"].value)
+    matB_12 = eval(document.forms["plus_minus_matrix22_form"]["matB_12"].value)
+    matB_21 = eval(document.forms["plus_minus_matrix22_form"]["matB_21"].value)
+    matB_22 = eval(document.forms["plus_minus_matrix22_form"]["matB_22"].value)
 
     if(plus_minus == "-"){
         matB_11 = 0-matB_11
