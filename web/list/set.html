@@ -7,16 +7,27 @@
     <title>Document</title>
     <script src="/../HSMath/web/script/set.js"></script>
   </head>
+  <style>
+    input[type="tarr"] {
+      width: 10%;
+      border: 2px solid #aaa;
+      border-radius: 4px;
+      margin: 2px 0;
+      padding: 4px;
+      box-sizing: border-box;
+      transition: 0.3s;
+    }
+  </style>
   <body>
     <form name="set_all_in_one_form" ">
 
-        <input type="text" name="input_set_a" placeholder="A">
-        <input type="text" name="input_set_b" placeholder="B"/>
-        <input type="text" name="input_set_c" placeholder="C"/>
+        <input type="tarr" name="input_set_a" placeholder="A">
+        <input type="tarr" name="input_set_b" placeholder="B"/>
+        <input type="tarr" name="input_set_c" placeholder="C"/>
 
-        <p></p><input type="text" id="union_output" readonly /> Union</p>
-        <p><input type="text" id="intersection_output" readonly /> Intersection</p>
-        <p><input type="text" id="different_output" readonly placeholder="Fill only A and B"/> A-B</p>
+        <p></p><input type="tarr" id="union_output" readonly /> Union</p>
+        <p><input type="tarr" id="intersection_output" readonly /> Intersection</p>
+        <p><input type="tarr" id="different_output" readonly placeholder="Fill only A and B"/> A-B</p>
         
         <input type="button" value="GO" 
         onclick="set_all_in_one()" />
