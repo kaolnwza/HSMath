@@ -289,6 +289,7 @@ function sequence(){
     n = Number(document.forms["sequenceForms"]["num_sequencenn"].value) // numn = n
     d = a2-a1 // numd = d
     ans = a1+(n-1)*d // an = a1+(n-1)d
+    document.getElementById("d_ans").value = d
     document.getElementById("sequence_ans").value = ans
     return false
 }
