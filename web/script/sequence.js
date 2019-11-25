@@ -29,18 +29,22 @@ function arithmetic_sequence() {
     document.getElementById("arithmetic_ans").value = ans
 }
 
-//ลําดับอนุกรม(อนุกรมเรขาคณิต)(DEV by Ping)
+//ลําดับอนุกรม(อนุกรมเรขาคณิต)(DEV by Ping) ไม่รู้ค่า an
 function arithmetic_geometic() {
-    var input_done, numn, numr //หาลําดับเรขาคณิต
-    input_done //รอการแก้บัคโดยเก้าเดาว่าเป็น an
-    numn = Number(document.forms["geometicForms"]["num_geometicnn"].value)//numn = n(เลขชี้กําลัง)
-    numr = input_done[input_done.length - 1] / input_done[input_done.length - 2]//numr = r
-    if (numr < 1) {
-        ans = (input_done[0] * (1 - (numr ** numn))) / 1 - numr//sn = a1*(1-(r**n))/1-r
-        document.getElementById("geometic_ans").value = ans
-    } else if (numr > 1) {
-        ans = (input_done[0] * ((numr ** numn) - 1)) / numr - 1//sn = a1*((r**n)-1)/1-r
-        document.getElementById("geometic_ans").value = ans
-    }
+    var a1, n, r, ans //หาลําดับเรขาคณิต
+    a1 = Number(document.forms["geometicForms"]["num_geometicna1"].value)//numn = n(เลขชี้กําลัง)
+    n = Number(document.forms["geometicForms"]["num_geometicnn"].value)
+    r = Number(document.forms["geometicForms"]["num_geometicnr"].value)
+    ans = (a1 * (1 - (r ** n))) / (1 - r)//sn = a1*(1-(r**n))/1-r
+    document.getElementById("geometic_ans").value = ans
+}
+//ลําดับอนุกรม(อนุกรมเรขาคณิต)(DEV by Ping) รู้ค่า an
+function arithmetic_geometic_an() {
+    var ans, a1, an, r //หาลําดับเรขาคณิต
+    a1 = Number(document.forms["geometicAnForms"]["num_geometicna1"].value)//numn = n(เลขชี้กําลัง)
+    an = Number(document.forms["geometicAnForms"]["num_geometicnan"].value)
+    r = Number(document.forms["geometicAnForms"]["num_geometicnr"].value)
+    ans = (a1 - an * r) / (1 - r)//(a-an*r)/(1-r)
+    document.getElementById("geometicAn_ans").value = ans
 }
 
