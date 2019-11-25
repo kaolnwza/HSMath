@@ -47,4 +47,3 @@ function arithmetic_geometic_an() {
     ans = (a1 - an * r) / (1 - r)//(a-an*r)/(1-r)
     document.getElementById("geometicAn_ans").value = ans
 }
-
