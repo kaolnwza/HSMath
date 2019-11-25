@@ -58,17 +58,30 @@
         <input type="button" value="GO" onclick="arithmetic_sequence()" />
       </form>
 
-      <form name="arithmeticForms">
-        <p>ลําดับอนุกรม(อนุกรมเรขาคณิต)(DEV by Ping)</p>
-        <p><input type="tarr" name="num_arithmetica1" /> a1</p>
-        <p><input type="tarr" name="num_arithmetican" /> an</p>
-        <p><input type="tarr" name="num_arithmeticnn" /> n</p>
+      <form name="geometicForms">
+        <p>ลําดับอนุกรม(อนุกรมเรขาคณิต)(DEV by Ping) ไม่รู้ค่า an</p>
+        <p><input type="tarr" name="num_geometicna1" /> a1</p>
+        <p><input type="tarr" name="num_geometicnn" /> n</p>
+        <p><input type="tarr" name="num_geometicnr" /> r</p>
 
         <p>
           <input type="tarr" id="geometic_ans" style="width: 20%" readonly />
           Sn
         </p>
         <input type="button" value="GO" onclick="arithmetic_geometic()" />
+      </form>
+
+      <form name="geometicAnForms">
+        <p>ลําดับอนุกรม(อนุกรมเรขาคณิต)(DEV by Ping) รู้ค่า an</p>
+        <p><input type="tarr" name="num_geometicna1" /> a1</p>
+        <p><input type="tarr" name="num_geometicnan" /> an</p>
+        <p><input type="tarr" name="num_geometicnr" /> n</p>
+
+        <p>
+          <input type="tarr" id="geometicAn_ans" style="width: 20%" readonly />
+          Sn
+        </p>
+        <input type="button" value="GO" onclick="arithmetic_geometic_an()" />
       </form>
     </font>
   </body>
