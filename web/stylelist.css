@@ -3,6 +3,7 @@ html{
     overflow: hidden;
 }
 body{
+    scroll-behavior: smooth;
     margin: 0;
     padding: 0;
     perspective: 1px;
@@ -10,10 +11,10 @@ body{
     height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
-    font-family: "Agency fb";
     background-color: #1e2126;
     
 }
+
 .pala{
     box-sizing: border-box;
     min-height: 100vh;
@@ -68,9 +69,7 @@ body{
 .text-white{
     color: white;
 }
-.row{
-    padding-top:120vh ;
-}
+
 .top{
     padding: 1px 0 0 10px;
 }
@@ -81,3 +80,8 @@ body{
     width: 5vw;
     height: 38vh;
 }
+.gotopbtn{
+    position: fixed;
+    right: 4vw;
+    text-align: center;
+  }
