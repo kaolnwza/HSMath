@@ -127,5 +127,4 @@ function static() {
     document.getElementById("max_val_id").value =
         input_done[input_done.length - 1];
     document.getElementById("min_val_id").value = input_done[0];
-    document.getElementById("tss").value = test;
 }
