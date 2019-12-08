@@ -1,50 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="stylesheet.css">
-    <link rel="stylesheet" href="calculation.css">
-    <script src="process.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../script/process.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
-        <div class="box">
+<body style="background-color: #1e2126; ">
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top " style="font-family: agency fb;">
+                <div class="container">
+              <a class="navbar-brand" href="../indexv2.html" style="font-size: 36px;">Mathematics</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav" style="font-size: 20px;">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../indexv2.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/kaolnwza/HSMath">Github</a>
+                  </li> 
+                </ul>
+              </div>  </div>
+            </nav>
+    <div class="container" style="background-color: rgb(214, 214, 214); font-family: bangna new;">
+        <div class="row">
+            <div class="col-lg-6 mt-4">
                 <form name="permutation_not_similar" onsubmit="return linearPer1()">
-                    <p><strong>Linear Permutation(not similar) <input type="submit" value="calculate"></strong><br>
+                    <strong>Linear Permutation(not similar) </strong><br>
+                        n = <input type="text" name="fac" required class="form-control"><br>
+                        <input type="submit" value="calculate" class="btn btn-primary">
+                </form></div>
+                <div class="col-lg-5 shadow rounded my-auto p-4">
                         n! = <strong id="linear_per1">Ans</strong><br>
-                        n = <input type="text" name="fac" required>
-                    </p>
-                </form>
-            </div>
-        
-            <div class="box">
-                <form name="permutation_similar" onsubmit="return linearPer2()">
-                    <p><strong>Linear Permutation(similar) <input type="submit" value="calculate"></strong><br>
-                    n!/n<sub>1</sub>!n<sub>2</sub>!... = <strong id="linear_per2">Ans</strong><br>
-                    n = <input type="text" name="fac"><br>
-                    n<sub>1</sub>,n<sub>2</sub>,n<sub>3</sub>,... = <input type="text" name="fac_divide" placeholder="2,3,4,...">
-                </p>
-                </form>
-            </div>
-        
-            <div class="box">
-                <form name="circle_permutation" onsubmit="return circlePer()">
-                    <p><strong>Circle Permutation <input type="submit" value="calculate"></strong><br>
-                        (n-1)! = <strong id="circle_per">Ans</strong><br>
-                        n = <input type="text" name="num"><br>
-                    </p>
-                </form>
-            </div>
-            <div class="box">
-                    <form name="probabilityForms" onsubmit="return probability()">
-                    <p><strong>Probability <input type="submit" value="calculate"></strong><br>
-                        n(E)/n(S) = <strong id="probability_ans">Ans</strong><br>
-                        n(E) = <input type="text" name="num_event"><br>
-                        n(S) = <input type="text" name="num_sample_space"><br>
-                    </p>
-                    </form>
                 </div>
+            </div>
+        <hr>
+            <div class="row">
+                <div class="col-lg-6">
+                <form name="permutation_similar" onsubmit="return linearPer2()">
+                    <strong>Linear Permutation(similar) <br>
+                    n = <input type="text" name="fac" class="form-control">
+                    n<sub>1</sub>,n<sub>2</sub>,n<sub>3</sub>,... = <input type="text" name="fac_divide" placeholder="2,3,4,..." class="form-control"><br>
+                    <input type="submit" value="calculate" class="btn btn-primary"></strong>
+                
+                </form></div>
+                <div class="col-lg-5 shadow rounded my-auto p-4">
+                    n!/n<sub>1</sub>!n<sub>2</sub>!... = <strong id="linear_per2">Ans</strong><br>
+                </div>
+            </div>
+        <hr>
+            <div class="row">
+                <div class="col-lg-6">
+                <form name="circle_permutation" onsubmit="return circlePer()">
+                    <strong>Circle Permutation </strong><br>
+                        n = <input type="text" name="num" class="form-control"><br>
+                        <input type="submit" value="calculate" class="btn btn-primary">
+                </form></div>
+                <div class="col-lg-5 shadow rounded my-auto p-4">
+                    (n-1)! = <strong id="circle_per">Ans</strong>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-lg-6">
+                    <form name="probabilityForms" onsubmit="return probability()">
+                    <p><strong>Probability </strong><br>
+                        n(E) = <input type="text" name="num_event" class="form-control">
+                        n(S) = <input type="text" name="num_sample_space" class="form-control"><br>
+                        <input type="submit" value="calculate" class="btn btn-primary">
+                    </p>
+                    </form></div>
+                    <div class="col-lg-5 shadow rounded my-auto p-4">
+                        n(E)/n(S) = <strong id="probability_ans">Ans</strong><br>
+
+                    </div>
+                </div>
+            </div>
 </body>
 </html>
