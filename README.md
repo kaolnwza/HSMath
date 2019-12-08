@@ -1,6 +1,6 @@
 # HSMath
 ### Feature
-> โปรแกรมช่วยคํานวนสูตรคณิตศาสตร์ของระดับชั้นมัธยมปลาย เพื่อให้ได้คําตอบที่ถูกต้องและแม่นยําที่สุด
+> โปรแกรมช่วยคํานวนสูตรคณิตศาสตร์ของระดับชั้นมัธยมปลาย เพื่อให้ได้คําตอบที่ถูกต้องและแม่นยํา
 
 ### Buit With
 - HTML
@@ -9,9 +9,9 @@
 - Bootstrap Framework
 
 ### References
-- [HTML&CSS] (https://www.w3schools.com/html/html_intro.asp)
-- [JavaScript] (https://www.w3schools.com/js/js_intro.asp)
-- [Bootstrap] (https://www.w3schools.com/bootstrap4/bootstrap_get_started.asp)
+- [HTML&CSS](https://www.w3schools.com/html/html_intro.asp)
+- [JavaScript](https://www.w3schools.com/js/js_intro.asp)
+- [Bootstrap4](https://www.w3schools.com/bootstrap4/bootstrap_get_started.asp)
 
 ### Purpose
 - ส่งเสริมการทักษะเรียนรู้และพัฒนาการทางด้านคณิตศาสตร์แก่นักเรียนมัธยมปลาย
