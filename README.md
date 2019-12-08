@@ -1,8 +1,8 @@
-# HSMath
+# High-school Calculator
 ### Feature
 > โปรแกรมช่วยคํานวนสูตรคณิตศาสตร์ของระดับชั้นมัธยมปลาย เพื่อให้ได้คําตอบที่ถูกต้องและแม่นยํา
 
-### Buit With
+### Built With
 - HTML
 - CSS
 - JavaScript
