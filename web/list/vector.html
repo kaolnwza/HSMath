@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../script/process.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body style="background-color: #1e2126; ">
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top " style="font-family: agency fb;">
+                <div class="container">
+              <a class="navbar-brand" href="../indexv2.html" style="font-size: 36px;">Mathematics</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav" style="font-size: 20px;">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../indexv2.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/kaolnwza/HSMath">Github</a>
+                  </li> 
+                </ul>
+              </div>  </div>
+            </nav>
+    <div class="container "style="background-color: rgb(214, 214, 214); font-family: bangna new;">
+        <div class="row">
+            <div class="col-lg-6 p-4">
+                <form name="vertor2DForms" onsubmit="return vector2D()">
+                    <h3>Vector 2D size</h3> <br>
+                    Point X1 : <input type="text" name="pointx1" class="form-control"><br>
+                    Point Y1 : <input type="text" name="pointy1" class="form-control"><br>
+                    Point X2 : <input type="text" name="pointx2" class="form-control"><br>
+                    Point Y2 : <input type="text" name="pointy2" class="form-control"><br>
+                    <input type="submit" value="calculate" class="btn btn-primary">
+                </form></div>
+                <div class="shadow p-5 rounded col-lg-5 my-auto" style="text-align: center; height: 100%;">
+                Point (X1,Y1) and Point (X2,Y2) have size = <strong id=vector_size2D>Ans</strong><br>
+            </div>
+            </div>
+        <hr>
+            <div class="row">
+                <div class="col-lg-6 p-4">
+                <form name="vertor3DForms" onsubmit="return vector3D()">
+                    <h3>Vector 3D size</h3> <br>
+                    
+                    Point X1 : <input type="text" name="pointx1" class="form-control"><br>
+                    Point Y1 : <input type="text" name="pointy1" class="form-control"><br>
+                    Point Z1 : <input type="text" name="pointz1" class="form-control"><br>
+                    Point X2 : <input type="text" name="pointx2" class="form-control"><br>
+                    Point Y2 : <input type="text" name="pointy2" class="form-control"><br>
+                    Point Z2 : <input type="text" name="pointz2" class="form-control"><br>
+                    <input type="submit" value="calculate" class="btn btn-primary">
+                </form></div>
+                <div class="col-lg-5 my-auto shadow rounded p-5">
+                    Point (X1,Y1,Z1) and Point (X2,Y2,Z2) have size = <strong id=vector_size3D>Ans</strong><br>
+                </div>
+                
+            </div>
+        </div>
+</body>
+</html>
