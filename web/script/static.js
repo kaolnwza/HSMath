@@ -23,6 +23,10 @@ function static() {
             input_done.push(input[i]);
         }
     }
+    
+    // sorting input_donne
+        input_done.sort(function(a, b){return a-b});
+    
     // xbar
     sam = 0;
     xbar = 0;
@@ -117,9 +121,7 @@ function static() {
     document.getElementById("sd_sigma_id").value = sd_sigma;
     document.getElementById("sd_s_id").value = sd_s;
     document.getElementById("sd_up2_id").value = sd_up2;
-    document.getElementById("sorted_id").value = String(
-        input_done.sort()
-    ).split(",");
+    document.getElementById("sorted_id").value = String(input_done).split(",");
     document.getElementById("count_id").value = input_done.length;
     document.getElementById("sum_id").value = input_done.reduce(
         (x1, x2) => x1 + x2

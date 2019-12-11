@@ -6,7 +6,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="../script/process.js"></script>
+    <script src="../script/linear.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -53,8 +53,8 @@
             <h1 class="text-center p-3"><strong >Linear</strong></h1><hr>
         <div class="row">
             <div class="col-lg-6 mt-4">
-                <form name="permutation_not_similar" onsubmit="return linearPer1()">
-                    <strong>Linear Permutation(not similar) </strong><br>
+                <form name="permutation_not_duplicate" onsubmit="return linearPer1()">
+                    <strong>Linear Permutation(Don't have duplicate) </strong><br>
                         n = <input type="text" name="fac" required class="form-control"><br>
                         <input type="submit" value="calculate" class="btn btn-primary">
                 </form></div>
@@ -65,10 +65,10 @@
         <hr>
             <div class="row">
                 <div class="col-lg-6">
-                <form name="permutation_similar" onsubmit="return linearPer2()">
-                    <strong>Linear Permutation(similar) <br>
+                <form name="permutation_duplicate" onsubmit="return linearPer2()">
+                    <strong>Linear Permutation(Have duplicate) <br>
                     n = <input type="text" name="fac" class="form-control">
-                    n<sub>1</sub>,n<sub>2</sub>,n<sub>3</sub>,... = <input type="text" name="fac_divide" placeholder="2,3,4,..." class="form-control"><br>
+                    n<sub>1</sub>,n<sub>2</sub>,n<sub>3</sub>,... = <input type="text" name="fac_divide" placeholder="2 3 4 ..." class="form-control"><br>
                     <input type="submit" value="calculate" class="btn btn-primary"></strong>
                 
                 </form></div>
