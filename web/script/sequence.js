@@ -1,7 +1,7 @@
 //equation by **kao** what wrong tell me fast
 //ลําดับอนุกรม(ลําดับจํากัด(ลําดับเลขคณิต))(DEV by Ping)
 function sequence() {
-    var ans, a1, n, d, eqa //หาพจน์ที่ N แบบธรรมดา an = a1+(n-1)d
+    var ans, a1, n, d, an, eqa //หาพจน์ที่ N แบบธรรมดา an = a1+(n-1)d
     a1 = Number(document.forms["sequenceForms"]["num_sequencea1"].value)
     d = Number(document.forms["sequenceForms"]["num_sequenced"].value)
     n = Number(document.forms["sequenceForms"]["num_sequencenn"].value)
@@ -28,7 +28,7 @@ function findlog(x, y) {
 
 //ลําดับเรขาคณิต(DEV by Ping)
 function sequence2() {
-    var ans, a1, r, n, eqa //หาลําดับเรขาคณิต
+    var ans, a1, r, n, an, eqa //หาลําดับเรขาคณิต
     a1 = Number(document.forms["sequenceForms2"]["num_sequence2a1"].value) //numa1 = a1
     r = Number(document.forms["sequenceForms2"]["num_sequence2nr"].value) //numr = r
     n = Number(document.forms["sequenceForms2"]["num_sequence2nn"].value) //numn = n
@@ -50,7 +50,7 @@ function sequence2() {
 
 //ลําดับอนุกรม(อนุกรมเลขคณิต)(DEV by Ping)
 function arithmetic_sequence() {
-    var ans, a1, an, n, eqa//หาลําดับอนุกรม
+    var ans, a1, an, n, sn, eqa//หาลําดับอนุกรม
     a1 = Number(document.forms["arithmeticForms"]["num_arithmetica1"].value)
     an = Number(document.forms["arithmeticForms"]["num_arithmetican"].value)
     n = Number(document.forms["arithmeticForms"]["num_arithmeticnn"].value)
@@ -69,21 +69,24 @@ function arithmetic_sequence() {
     document.getElementById("arithmetic_equa").value = eqa
 }
 
-//ลําดับอนุกรม(อนุกรมเรขาคณิต)(DEV by Ping) ไม่รู้ค่า an
-function arithmetic_geometic() {
-    var a1, n, r, ans //หาลําดับเรขาคณิต
-    a1 = Number(document.forms["geometicForms"]["num_geometicna1"].value)//numn = n(เลขชี้กําลัง)
-    n = Number(document.forms["geometicForms"]["num_geometicnn"].value)
-    r = Number(document.forms["geometicForms"]["num_geometicnr"].value)
-    ans = (a1 * (1 - (r ** n))) / (1 - r)//sn = a1*(1-(r**n))/1-r
-    document.getElementById("geometic_ans").value = ans
-}
-//ลําดับอนุกรม(อนุกรมเรขาคณิต)(DEV by Ping) รู้ค่า an
+// ยังไม่เสร็จ เหลือ r
+//ลําดับอนุกรม(อนุกรมเรขาคณิต)(DEV by Ping) 
 function arithmetic_geometic_an() {
-    var ans, a1, an, r //หาลําดับเรขาคณิต
+    var ans, a1, an, r, sn, eqa //หาลําดับเรขาคณิต
     a1 = Number(document.forms["geometicAnForms"]["num_geometicna1"].value)//numn = n(เลขชี้กําลัง)
     an = Number(document.forms["geometicAnForms"]["num_geometicnan"].value)
     r = Number(document.forms["geometicAnForms"]["num_geometicnr"].value)
-    ans = (a1 - an * r) / (1 - r)//(a-an*r)/(1-r)
+    sn = Number(document.forms["geometicAnForms"]["num_geometicnsn"].value)
+    //a1 ว่าง ans = sn * (1 / r) - (an * r)
+    if (a1 == "" && an != "" && r != "" && sn != "") { ans = sn * (1 / r) + (an * r); eqa = "sn / (1 / r) - (an * r)" }
+    //an ว่าง ans = (a1 - sn * (1 / r)) / r
+    else if (a1 != "" && an == "" && r != "" && sn != "") { ans = (a1 - sn * (1 / r)) / r; eqa = "(a1 - sn * (1 / r)) / r" }
+    //r ว่าง
+    else if (a1 != "" && an != "" && r == "" && sn != "") { }
+    //sn ว่าง ans = (a1 - an * r) / (1 / r)
+    else if (a1 != "" && an != "" && r != "" && sn == "") { ans = (a1 - an * r) / (1 / r); eqa = "(a1 - an * r) / (1 / r)" }
+    //(a-an*r)/(1-r)
     document.getElementById("geometicAn_ans").value = ans
+    document.getElementById("geometicAn_equa").value = eqa
 }
+
