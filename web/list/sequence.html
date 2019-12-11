@@ -4,86 +4,174 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
     <script src="../script/sequence.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <title>Sequence</title>
+
   </head>
-  <style>
-    input[type="tarr"] {
-      width: 10%;
-      border: 2px solid #aaa;
-      border-radius: 4px;
-      margin: 2px 0;
-      padding: 4px;
-      box-sizing: border-box;
-      transition: 0.3s;
-    }
-  </style>
-  <body>
-    <font face="Verdana" size="3">
+  <body style="background-color: #1e2126; ">
+    
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top " style="font-family: agency fb;">
+          <div class="container">
+        <a class="navbar-brand" href="../index.html" style="font-size: 36px;">Mathematics</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav" style="font-size: 20px;">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                  <a class="nav-link" href="static.html">Static</a>
+                </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="vector.html">Vector</a>
+                </li>
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="linear.html">Linear</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="set.html">Set</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="analytic_geometry.html">Analytic Geometry</a>
+                </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/kaolnwza/HSMath">Github</a>
+            </li> 
+            <li class="nav-item top">
+                <a class="nav-link top2" href="../index.html#comment">Report</a>
+            </li>
+          </ul>
+        </div>  </div>
+      </nav>
+
+      <div class="container" style="background-color: rgb(214, 214, 214); font-family: bangna new;">
+          <h1 class="text-center p-3"><strong>Sequence</strong></h1><hr>
+
+        <div class="row">
+          <div class="col-lg-6">
       <form name="sequenceForms">
-        <p>ลําดับอนุกรม(ลําดับจํากัด(ลําดับเลขคณิต))(DEV by Ping)</p>
-        <p><input type="tarr" name="num_sequencea1" /> a1</p>
-        <p><input type="tarr" name="num_sequenced" /> d</p>
-        <p><input type="tarr" name="num_sequencenn" /> n</p>
+        <h5 class="mt-3">ลําดับอนุกรม(ลําดับจํากัด(ลําดับเลขคณิต))(DEV by Ping)</h5> 
+        <input type="tarr" name="num_sequencea1" class="form-control mt-3 mb-3" placeholder="a1"/> 
+        <input type="tarr" name="num_sequenced" class="form-control mt-3 mb-3" placeholder="d"/> 
+        <input type="tarr" name="num_sequencenn" class="form-control mt-3 mb-3" placeholder="n"/> 
+        <input type="button" value="GO" onclick="sequence()" class="btn btn-primary"/>
+      </div>
+      <div class="col-lg-5 my-auto shadow p-4 rounded">
+          <div class="input-group mb-4">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">an</span>
+              </div>
+              <input type="tarr" id="sequence_ans"  readonly class="form-control " /> 
 
-        <p>
-          <input type="tarr" id="sequence_ans" style="width: 20%" readonly /> an
-        </p>
-        <input type="button" value="GO" onclick="sequence()" />
-      </form>
-
+          </div>
+    </div>
+  </form>
+    </div>
+    
+    <hr>
+    <div class="row">
+      <div class="col-lg-6">
       <form name="sequenceForms2">
-        <p>ลําดับเรขาคณิต(DEV by Ping)</p>
-        <p><input type="tarr" name="num_sequence2a1" /> a1</p>
-        <p><input type="tarr" name="num_sequence2nr" /> r</p>
-        <p><input type="tarr" name="num_sequence2nn" /> n</p>
+        <h5>ลําดับเรขาคณิต(DEV by Ping)</h5>
+       
+        
+        <input type="tarr" name="num_sequence2a1" class="form-control mt-3 mb-3" placeholder="a1"/> 
+        <input type="tarr" name="num_sequence2nr" class="form-control mt-3 mb-3" placeholder="r"/> 
+        <input type="tarr" name="num_sequence2nn" class="form-control mt-3 mb-3" placeholder="n"/> 
+        <input type="button" value="GO" onclick="sequence2()" class="btn btn-primary"/>
 
-        <p>
-          <input type="tarr" id="sequence2_ans" style="width: 20%" readonly />
-          an
-        </p>
-        <input type="button" value="GO" onclick="sequence2()" />
+      </div>
+      <div class="col-lg-5 shadow rounded my-auto p-3">
+      <div class="input-group mb-4">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Answer</span>
+          </div>
+          <input type="tarr" id="sequence2_ans" style="width: 20%" readonly class="form-control"/>
+      </div>
+    </div>
       </form>
-
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-lg-6">
       <form name="arithmeticForms">
-        <p>ลําดับอนุกรม(อนุกรมเลขคณิต)(DEV by Ping)</p>
-        <p><input type="tarr" name="num_arithmetica1" /> a1</p>
-        <p><input type="tarr" name="num_arithmetican" /> an</p>
-        <p><input type="tarr" name="num_arithmeticnn" /> n</p>
+        <h5>
+        ลําดับอนุกรม(อนุกรมเลขคณิต)(DEV by Ping)</h5>
 
-        <p>
-          <input type="tarr" id="arithmetic_ans" style="width: 20%" readonly />
-          Sn
-        </p>
-        <input type="button" value="GO" onclick="arithmetic_sequence()" />
+        <input type="tarr" name="num_arithmetica1" class="form-control mt-3 mb-3" placeholder="a1"/> 
+        <input type="tarr" name="num_arithmetican" class="form-control mt-3 mb-3" placeholder="an"/> 
+        <input type="tarr" name="num_arithmeticnn" class="form-control mt-3 mb-3" placeholder="n"/> 
+        <input type="button" value="GO" onclick="arithmetic_sequence()" class="btn btn-primary"/>
+      </div>
+        <div class="col-lg-5 shadow rounded my-auto p-3">
+            <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">sn</span>
+                </div>
+                <input type="tarr" id="arithmetic_ans" class="form-control" readonly />
+
+            </div>
+        </div>
       </form>
-
+    </div>
+    <hr>
+<div class="row">
+  <div class="col-lg-6">
       <form name="geometicForms">
-        <p>ลําดับอนุกรม(อนุกรมเรขาคณิต)(DEV by Ping) ไม่รู้ค่า an</p>
-        <p><input type="tarr" name="num_geometicna1" /> a1</p>
-        <p><input type="tarr" name="num_geometicnn" /> n</p>
-        <p><input type="tarr" name="num_geometicnr" /> r</p>
+        <h5>
+            ลําดับอนุกรม(อนุกรมเรขาคณิต)(DEV by Ping) ไม่รู้ค่า an
 
-        <p>
-          <input type="tarr" id="geometic_ans" style="width: 20%" readonly />
-          Sn
-        </p>
-        <input type="button" value="GO" onclick="arithmetic_geometic()" />
+        </h5>
+        <input type="tarr" name="num_geometicna1" class="form-control mt-3 mb-3" placeholder="a1"/> 
+        <input type="tarr" name="num_geometicnn" class="form-control mt-3 mb-3" placeholder="n"/> 
+        <input type="tarr" name="num_geometicnr" class="form-control mt-3 mb-3" placeholder="r"/> 
+        <input type="button" value="GO" onclick="arithmetic_geometic()" class="btn btn-primary"/>
+      </div>
+        <div class="col-lg-5 shadow rounded p-3 my-auto">
+          <div class="input-group mb-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">sn</span>
+            </div>
+            <input type="tarr" id="geometic_ans" class="form-control" readonly />
+
+        </div>
+        </div>
       </form>
-
+    </div>
+<hr>
+<div class="row">
+      <div class="col-lg-6">
       <form name="geometicAnForms">
-        <p>ลําดับอนุกรม(อนุกรมเรขาคณิต)(DEV by Ping) รู้ค่า an</p>
-        <p><input type="tarr" name="num_geometicna1" /> a1</p>
-        <p><input type="tarr" name="num_geometicnan" /> an</p>
-        <p><input type="tarr" name="num_geometicnr" /> r</p>
+        <h5>
+        ลําดับอนุกรม(อนุกรมเรขาคณิต)(DEV by Ping) รู้ค่า an
 
-        <p>
-          <input type="tarr" id="geometicAn_ans" style="width: 20%" readonly />
-          Sn
-        </p>
-        <input type="button" value="GO" onclick="arithmetic_geometic_an()" />
+        </h5>
+        <input type="tarr" name="num_geometicna1" class="form-control mt-3 mb-3" placeholder="a1"/> 
+        <input type="tarr" name="num_geometicnan" class="form-control mt-3 mb-3" placeholder="an"/> 
+        <input type="tarr" name="num_geometicnr" class="form-control mt-3 mb-3" placeholder="r"/> 
+        <input type="button" value="GO" onclick="arithmetic_geometic_an()" class="btn btn-primary"/>
+      </div>
+      <div class="col-lg-5 shadow rounded my-auto p-3">
+          <div class="input-group mb-4">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Answer</span>
+              </div>
+              <input type="tarr" id="geometicAn_ans" class="form-control" readonly />
+          </div>
+          
+
+        </div>
       </form>
-    </font>
+    </div>
+    </div>
   </body>
 </html>
  

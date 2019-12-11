@@ -7,7 +7,26 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="Css/stylelist.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
 
+        tr {
+        width: 100%;
+        display: inline-table;
+        table-layout: fixed;
+        }
+        
+        table{
+         height:260px;             
+         display: -moz-groupbox;   
+        }
+        tbody{
+          overflow-y: scroll;      
+          height: 260px;         
+          width: 100%;
+          position: absolute;
+        }
+        
+            </style>
     <title>Mathematics</title>
 </head>
 <body style="font-family: Agency fb;">
@@ -22,7 +41,10 @@
                         <a class="nav-link top2" href="https://github.com/kaolnwza/HSMath">Github</a>
                       </li>
                       <li class="nav-item top">
-                        <a class="nav-link top2" href="our.html">About us</a>
+                        <a class="nav-link top2" href="our.html">About Us</a>
+                      </li>
+                      <li class="nav-item top">
+                        <a class="nav-link top2" href="#comment">Report</a>
                       </li>
                     </ul>
                   </nav>
@@ -81,7 +103,7 @@
                         <div class="card-body">
                           <h4 class="card-title">Sequence</h4>
                           <p class="card-text navbar-dark" style="font-family: bangna new;">ลำดับ และอนุกรม</p>
-                          <a href="list/vector.html" class="btn btn-primary">Click!</a>
+                          <a href="list/sequence.html" class="btn btn-primary">Click!</a>
                         </div>
                       </div>
         </div>
@@ -91,12 +113,75 @@
                         <div class="card-body">
                           <h4 class="card-title">Analytic Geometry</h4>
                           <p class="card-text navbar-dark" style="font-family: bangna new;">เรขาคณิตวิเคราะห์  </p>
-                          <a href="list/linear.html" class="btn btn-primary">Click!</a>
+                          <a href="list/analytic_geometry.html" class="btn btn-primary">Click!</a>
                         </div>
                       </div>
         </div>
     </div>
         <div class="gotopbtn mt-5 "><a href="#head" class="btn btn-primary p-3"><i class="fa fa-angle-double-up"></i></a></div>
+
+        <div class="row mt-5" style="font-family: bangna new;">
+          <div class="col-lg-12">
+              <h1 class="text-white" id="comment">Comment and Report</h1><hr class="bg-white">
+              <form action="">
+              <input type="text" class="form-control" id="idComment" value="" placeholder="Comment or Report Bug Here">
+              <input type="submit" id="commentBtn" class="btn btn-primary m-3" value="Comment">
+              <input type="reset" value="Reset" class="btn btn-primary">
+              </form>
+              <div class="col-lg-12 bg-dark p-3">
+                  <div>
+                          <table style="width: 100%; font-size: 28px; " class="table table-dark table-striped table-hover"> 
+                                  <tbody id="dataRow">
+                                  </table>
+                  
+                  </div>
+          </div>
+      
+          </div>
     </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+     <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
+
+     <script>
+       // Your web app's Firebase configuration
+       var firebaseConfig = {
+         apiKey: "AIzaSyBWPZw07kxZG9P9KvOj6h_ScYgBiGbjrJI",
+         authDomain: "home-561fc.firebaseapp.com",
+         databaseURL: "https://home-561fc.firebaseio.com",
+         projectId: "home-561fc",
+         storageBucket: "home-561fc.appspot.com",
+         messagingSenderId: "628448471095",
+         appId: "1:628448471095:web:88c2c09572f147c53af7b2",
+         measurementId: "G-P8WNQG4D15"
+       };
+       // Initialize Firebase
+       firebase.initializeApp(firebaseConfig);
+       firebase.analytics();
+
+let myFirebase = firebase.database();
+let dataRef = myFirebase.ref('/projectcomment');
+document.getElementById("commentBtn").onclick = function() {
+let lcomment = document.getElementById('idComment').value;
+let ltime = Date.now();
+dataRef.push({
+comment: lcomment,
+time: ltime
+});
+};
+</script>
+
+<script>
+dataRef.limitToLast(5).on('child_added', function(childSnapshot) {
+let item = childSnapshot.val()
+document.getElementById('dataRow').innerHTML += "<tr><td>" + item.comment + "</td>"
+});
+</script>
+    
+    </body>
 </body>
 </html>

@@ -4,106 +4,171 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script src="/../HSMath/web/script/analytic_geometry.js"></script>
-    <title>Document</title>
+    <script src="../script/analytic_geometry.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Analytic Geometry</title>
   </head>
-  <style>
-    input[type="tarr"] {
-      width: 10%;
-      border: 2px solid #aaa;
-      border-radius: 4px;
-      margin: 2px 0;
-      padding: 4px;
-      box-sizing: border-box;
-      transition: 0.3s;
-    }
-  </style>
-  <body>
+  <body style="background-color: #1e2126; ">
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top " style="font-family: agency fb;">
+          <div class="container">
+        <a class="navbar-brand" href="../index.html" style="font-size: 36px;">Mathematics</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav" style="font-size: 20px;">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="static.html">Static</a>
+              </li>
+                <li class="nav-item">
+                <a class="nav-link" href="vector.html">Vector</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="linear.html">Linear</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="set.html">Set</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="sequence.html">Sequence</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/kaolnwza/HSMath">Github</a>
+            </li> 
+            <li class="nav-item top">
+                <a class="nav-link top2" href="../index.html#comment">Report</a>
+            </li>
+          </ul>
+        </div>  </div>
+      </nav>
+    <div class="container" style="background-color: rgb(214, 214, 214); font-family: bangna new;">
+        <h1 class="text-center p-3"><strong>Analytic Geometry</strong></h1><hr>
+
+    <div class="row">
+      <div class="col-lg-6">
     <form name="distance2point_form">
-      <p>การหาระยะห่างระหว่างจุดกับจุด</p>
-      <input type="tarr" name="distance2point_x1" />
-      <input type="tarr" name="distance2point_x2" />
-      <input type="tarr" name="distance2point_y1" />
-      <input type="tarr" name="distance2point_y2" />
-
-      <p><input type="tarr" id="distance2point_output" readonly /></p>
-
-      <input type="button" value="GO" onclick="distance2point()" />
+      <h3>การหาระยะห่างระหว่างจุดกับจุด</h3>
+      <input type="tarr" name="distance2point_x1" placeholder="x1" class="form-control mt-3 mb-3"/>
+      <input type="tarr" name="distance2point_y1" placeholder="y1" class="form-control mt-3 mb-3"/>
+      <input type="tarr" name="distance2point_x2" placeholder="x2" class="form-control mt-3 mb-3"/>
+      <input type="tarr" name="distance2point_y2" placeholder="y2" class="form-control mt-3 mb-3"/>
+      <input type="button" class="btn btn-primary" value="GO" onclick="distance2point()" />
+    </div>
+    <div class="col-lg-5 shadow rounded p-3 my-auto">
+      <h4>Answer</h4>
+      
+      <p><input type="tarr" id="distance2point_output" readonly class="form-control" /></p>
+    </div>
     </form>
-
+  </div>
+<hr>
+<div class="row">
+  <div class="col-lg-6">
     <form name="distance_line_form">
-      <p>การหาระยะห่างระหว่างจุดกับเส้นตรง</p>
-      <input type="tarr" name="distance_line_x" />
-      <input type="tarr" name="distance_line_y" />
-      <input type="tarr" name="distance_line_a" />
-      <input type="tarr" name="distance_line_b" />
-      <input type="tarr" name="distance_line_c" />
+      <h3>การหาระยะห่างระหว่างจุดกับเส้นตรง</h3>
+      <input type="tarr" name="distance_line_x" placeholder="x"  class="form-control mt-3 mb-3"/>
+      <input type="tarr" name="distance_line_y" placeholder="y"  class="form-control mt-3 mb-3"/>
+      <input type="tarr" name="distance_line_a" placeholder="a"  class="form-control mt-3 mb-3"/>
+      <input type="tarr" name="distance_line_b" placeholder="b"  class="form-control mt-3 mb-3"/>
+      <input type="tarr" name="distance_line_c" placeholder="c"  class="form-control mt-3 mb-3"/>
+      <input type="button" class="btn btn-primary" value="GO" onclick="distance_line()" />
+    </div>
+    <div class="col-lg-5 shadow rounded p-3 my-auto">
+        <h4>Answer</h4>
 
-      <p><input type="tarr" id="distance_line_output" readonly /></p>
-
-      <input type="button" value="GO" onclick="distance_line()" />
+      <p><input type="tarr" id="distance_line_output" readonly class="form-control" /></p>
+    </div>
     </form>
-
+  </div>
+  <hr>
+  <div class="row">
+<div class="col-lg-6">
     <form name="distance_parallel_form">
-      <p>การหาระยะห่างระหว่างเส้นคู่ขนาน</p>
-      <input type="tarr" name="distance_parallel_c1" />
-      <input type="tarr" name="distance_parallel_c2" />
-      <input type="tarr" name="distance_parallel_a" />
-      <input type="tarr" name="distance_parallel_b" />
+      <h3>การหาระยะห่างระหว่างเส้นคู่ขนาน</h3>
+      <input type="tarr" name="distance_parallel_c1" placeholder="c1" class="form-control mt-3 mb-3"/>
+      <input type="tarr" name="distance_parallel_c2" placeholder="c2" class="form-control mt-3 mb-3"/>
+      <input type="tarr" name="distance_parallel_a"  placeholder="a"  class="form-control mt-3 mb-3"/>
+      <input type="tarr" name="distance_parallel_b"  placeholder="b"  class="form-control mt-3 mb-3"/>
+      <input type="button" class="btn btn-primary" value="GO" onclick="distance_parallel()" />
+    </div>
+    <div class="col-lg-5 shadow rounded p-3 my-auto">
+        <h4>Answer</h4>
 
-      <p><input type="tarr" id="distance_parallel_output" readonly /></p>
-
-      <input type="button" value="GO" onclick="distance_parallel()" />
+      <p><input type="tarr" id="distance_parallel_output" readonly class="form-control" /></p>
+    </div>
     </form>
-
+  </div>
+  <hr>
+  <div class="row">
+<div class="col-lg-6">
     <form name="slope2point_form">
-      <p>หาความชัน</p>
-      <input type="tarr" name="slope2point_x1" />
-      <input type="tarr" name="slope2point_x2" />
-      <input type="tarr" name="slope2point_y1" />
-      <input type="tarr" name="slope2point_y2" />
+      <h3>หาความชัน</h3>
+      <input type="tarr" name="slope2point_x1" placeholder="x1" class="form-control mt-3 mb-3"/>
+      <input type="tarr" name="slope2point_y1" placeholder="y1" class="form-control mt-3 mb-3"/>
+      <input type="tarr" name="slope2point_x2" placeholder="x2" class="form-control mt-3 mb-3"/>
+      <input type="tarr" name="slope2point_y2" placeholder="y2" class="form-control mt-3 mb-3"/>
+      <input type="button" class="btn btn-primary" value="GO" onclick="slope2point()" />
+    </div>
+    <div class="col-lg-5 shadow rounded p-3 my-auto">
+        <h4>Answer</h4>
 
-      <p><input type="tarr" id="slope2point_output" readonly /></p>
-
-      <input type="button" value="GO" onclick="slope2point()" />
+      <p><input type="tarr" id="slope2point_output" readonly class="form-control" /></p>
+    </div>
     </form>
-
+  </div>
+  <hr>
+  <div class="row">
+<div class="col-lg-6">
     <form name="point_center_form">
-      <p>หาจุดแบ่งงภายในส่วนของเส้นตรง (หาจุดกึ่งกลางระหว่างจุด)</p>
-      <input type="tarr" name="point_center_x1" />
-      <input type="tarr" name="point_center_x2" />
-      <input type="tarr" name="point_center_y1" />
-      <input type="tarr" name="point_center_y2" />
+      <h4>หาจุดแบ่งงภายในส่วนของเส้นตรง (หาจุดกึ่งกลางระหว่างจุด)</h4>
+      <input type="tarr" name="point_center_x1" placeholder="x1" class="form-control mt-3 mb-3"/>
+      <input type="tarr" name="point_center_y1" placeholder="y1" class="form-control mt-3 mb-3"/>
+      <input type="tarr" name="point_center_x2" placeholder="x2" class="form-control mt-3 mb-3"/>
+      <input type="tarr" name="point_center_y2" placeholder="y2" class="form-control mt-3 mb-3"/>
+      <input type="button" class="btn btn-primary" value="GO" onclick="point_center()" />
+    </div>
+    <div class="col-lg-5 shadow rounded p-3 my-auto">
+        <h4>Answer</h4>
 
-      <p>
-        (<input type="tarr" id="point_center_x_output" readonly />,<input
+        (<input type="tarr" id="point_center_x_output" readonly class="form-control" />,<input
           type="tarr"
           id="point_center_y_output"
-          readonly
+          readonly class="form-control"
         />)
-      </p>
-
-      <input type="button" value="GO" onclick="point_center()" />
+    </div>
     </form>
-
+  </div>
+  <hr>
+  <div class="row">
+<div class="col-lg-6">
     <form name="point_center3_form">
-      <p>หาจุดตัดของเส้นมัธยฐาน (จุด 3 จุด)</p>
-      <input type="tarr" name="point_center3_x1" />
-      <input type="tarr" name="point_center3_x2" />
-      <input type="tarr" name="point_center3_x3" />
-      <input type="tarr" name="point_center3_y1" />
-      <input type="tarr" name="point_center3_y2" />
-      <input type="tarr" name="point_center3_y3" />
-
-      <p>
-        (<input type="tarr" id="point_center3_x_output" readonly />,<input
+      <h3>หาจุดตัดของเส้นมัธยฐาน (จุด 3 จุด)</h3>
+      <input type="tarr" name="point_center3_x1" placeholder="x1" class="form-control mt-3 mb-3"/>
+      <input type="tarr" name="point_center3_y1" placeholder="y1" class="form-control mt-3 mb-3"/>
+      <input type="tarr" name="point_center3_x2" placeholder="x2" class="form-control mt-3 mb-3"/>
+      <input type="tarr" name="point_center3_y2" placeholder="y2" class="form-control mt-3 mb-3"/>
+      <input type="tarr" name="point_center3_x3" placeholder="x3" class="form-control mt-3 mb-3"/>
+      <input type="tarr" name="point_center3_y3" placeholder="y3" class="form-control mt-3 mb-3"/>
+      <input type="button" class="btn btn-primary" value="GO" onclick="point_center_3()" />
+    </div>
+    <div class="col-lg-5 shadow rounded p-3 my-auto">
+      <h4>Answer</h4>
+        (<input type="tarr" id="point_center3_x_output" readonly class="form-control" />,<input
           type="tarr"
           id="point_center3_y_output"
-          readonly
+          readonly class="form-control"
         />)
-      </p>
-
-      <input type="button" value="GO" onclick="point_center_3()" />
+    </div>
     </form>
+  </div>
+</div>
   </body>
 </html>
