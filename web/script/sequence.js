@@ -13,7 +13,7 @@ function sequence() {
     else if (a1 != "" && d != "" && n == "" && an != "") { ans = (an + d - a1) / d; eqa = "(an + d - a1) / d" }
     //an ว่าง ANS = a1 + (n-1)*d
     else if (a1 != "" && d != "" && n != "" && an == "") { ans = a1 + (n - 1) * d; eqa = "a1 + (n - 1) * d" }
-    else { ans = 555; eqa = "kuy" }
+    else { alert("ใส่ข้อมูลไม่ถูกต้อง") }
 
     //an = a1+(n-1)d
     document.getElementById("sequence_ans").value = ans
@@ -41,6 +41,7 @@ function sequence2() {
     else if (a1 != "" && r != "" && n == "" && an != "") { ans = findlog(an / a1, r) + 1; eqa = "log(an / a1, base = r) + 1" }
     //an ว่าง ans = a1 * r ** (n-1)
     else if (a1 != "" && r != "" && n != "" && an == "") { ans = a1 * r ** (n - 1); eqa = "a1 * r ** (n-1)" }
+    else { alert("ใส่ข้อมูลไม่ถูกต้อง") }
     //rn = a1*(r**(n-1))
     document.getElementById("sequence2_ans").value = ans
     document.getElementById("sequence2_equa").value = eqa
