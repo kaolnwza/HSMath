@@ -78,13 +78,14 @@ function arithmetic_geometic_an() {
     r = Number(document.forms["geometicAnForms"]["num_geometicnr"].value)
     sn = Number(document.forms["geometicAnForms"]["num_geometicnsn"].value)
     //a1 ว่าง ans = sn * (1 / r) - (an * r)
-    if (a1 == "" && an != "" && r != "" && sn != "") { ans = sn * (1 / r) + (an * r); eqa = "sn / (1 / r) - (an * r)" }
+    if (a1 == "" && an != "" && r != "" && sn != "") { ans = sn * (1 - r) + (an * r); eqa = "sn ๕ (1 - r) - (an * r)" }
     //an ว่าง ans = (a1 - sn * (1 / r)) / r
-    else if (a1 != "" && an == "" && r != "" && sn != "") { ans = (a1 - sn * (1 / r)) / r; eqa = "(a1 - sn * (1 / r)) / r" }
+    else if (a1 != "" && an == "" && r != "" && sn != "") { ans = (a1 - sn * (1 - r)) / r; eqa = "(a1 - sn * (1 - r)) / r" }
     //r ว่าง
-    else if (a1 != "" && an != "" && r == "" && sn != "") { }
+    else if (a1 != "" && an != "" && r == "" && sn != "") { ans = (a1 - sn) / (an - sn); eqa = "(a1 - sn) / (an - sn)" }
     //sn ว่าง ans = (a1 - an * r) / (1 / r)
-    else if (a1 != "" && an != "" && r != "" && sn == "") { ans = (a1 - an * r) / (1 / r); eqa = "(a1 - an * r) / (1 / r)" }
+    else if (a1 != "" && an != "" && r != "" && sn == "") { ans = (a1 - an * r) / (1 - r); eqa = "(a1 - an * r) / (1 - r)" }
+    else { alert("ใส่ข้อมูลไม่ถูกต้อง") }
     //(a-an*r)/(1-r)
     document.getElementById("geometicAn_ans").value = ans
     document.getElementById("geometicAn_equa").value = eqa
