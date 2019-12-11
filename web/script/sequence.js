@@ -1,11 +1,23 @@
 //ลําดับอนุกรม(ลําดับจํากัด(ลําดับเลขคณิต))(DEV by Ping)
 function sequence() {
-    var ans, a1, n, d //หาพจน์ที่ N แบบธรรมดา an = a1+(n-1)d
+    var ans, a1, n, d, eqa //หาพจน์ที่ N แบบธรรมดา an = a1+(n-1)d
     a1 = Number(document.forms["sequenceForms"]["num_sequencea1"].value)
     d = Number(document.forms["sequenceForms"]["num_sequenced"].value)
     n = Number(document.forms["sequenceForms"]["num_sequencenn"].value)
-    ans = a1 + (n - 1) * d // an = a1+(n-1)d
+    an = Number(document.forms["sequenceForms"]["num_sequencean"].value)
+    //a1 ว่าง ANS = an - (n-1)*d
+    if (a1 == "" && d != "" && n != "" && an != "") { ans = an - (n - 1) * d; eqa = "an - (n - 1) * d" }
+    //d ว่าง ANS = (an - a1)/(n-1)
+    else if (a1 != "" && d == "" && n != "" && an != "") { ans = (an - a1) / (n - 1); eqa = "(an - a1) / (n - 1)" }
+    //n ว่าง ANS = (an+d-a1)/d
+    else if (a1 != "" && d != "" && n == "" && an != "") { ans = (an + d - a1) / d; eqa = "(an + d - a1) / d" }
+    //an ว่าง ANS = a1 + (n-1)*d
+    else if (a1 != "" && d != "" && n != "" && an == "") { ans = a1 + (n - 1) * d; eqa = "a1 + (n - 1) * d" }
+    else { ans = 555; eqa = "kuy" }
+
+    //an = a1+(n-1)d
     document.getElementById("sequence_ans").value = ans
+    document.getElementById("sequence_equa").value = eqa
 
 }
 
