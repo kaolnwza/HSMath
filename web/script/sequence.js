@@ -21,14 +21,29 @@ function sequence() {
 
 }
 
+// find log
+function findlog(x, y) {
+    return Math.log(y) / Math.log(x);
+}
+
 //ลําดับเรขาคณิต(DEV by Ping)
 function sequence2() {
-    var ans, a1, r, n //หาลําดับเรขาคณิต
+    var ans, a1, r, n, eqa //หาลําดับเรขาคณิต
     a1 = Number(document.forms["sequenceForms2"]["num_sequence2a1"].value) //numa1 = a1
     r = Number(document.forms["sequenceForms2"]["num_sequence2nr"].value) //numr = r
     n = Number(document.forms["sequenceForms2"]["num_sequence2nn"].value) //numn = n
-    ans = a1 * (r ** (n - 1)) //a1*(r**(n-1))
+    an = Number(document.forms["sequenceForms2"]["num_sequence2nan"].value) //numn = n
+    //a1 ว่าง ans = an / (r ** (n - 1))
+    if (a1 == "" && r != "" && n != "" && an != "") { ans = an / (r ** (n - 1)); eqa = "an / (r ** (n - 1))" }
+    //r ว่าง ans = (a1/an)**(1/(n-1))
+    else if (a1 != "" && r == "" && n != "" && an != "") { ans = (a1 / an) ** (1 / (n - 1)); eqa = "(a1 / an) ** (1 / (n - 1))" }
+    //n ว่าง ans = log(an/a1, base=r) + 1
+    else if (a1 != "" && r != "" && n == "" && an != "") { ans = findlog(an / a1, r) + 1; eqa = "log(an / a1, base = r) + 1" }
+    //an ว่าง ans = a1 * r ** (n-1)
+    else if (a1 != "" && r != "" && n != "" && an == "") { ans = a1 * r ** (n - 1); eqa = "a1 * r ** (n-1)" }
+    //rn = a1*(r**(n-1))
     document.getElementById("sequence2_ans").value = ans
+    document.getElementById("sequence2_equa").value = eqa
 }
 
 //ลําดับอนุกรม(อนุกรมเลขคณิต)(DEV by Ping)
