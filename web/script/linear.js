@@ -5,7 +5,7 @@ function linearPer1(){
     var num, ans, i
     ans = 1
     i = 1
-    num = Number(document.forms["permutation_not_similar"]["fac"].value)
+    num = Number(document.forms["permutation_not_duplicate"]["fac"].value)
     for (1; i <= num; i++){
         ans *= i
     }
@@ -20,9 +20,9 @@ function linearPer2(){
     ans = 1
     i = 1
     divide = 1
-    num = Number(document.forms["permutation_similar"]["fac"].value)
-    divideNum = document.forms["permutation_similar"]["fac_divide"].value
-    divideNum = divideNum.split(",")
+    num = Number(document.forms["permutation_duplicate"]["fac"].value)
+    divideNum = document.forms["permutation_duplicate"]["fac_divide"].value
+    divideNum = divideNum.split(" ")
     for (1; i <= num; i++ ){
         ans *= i
     }

@@ -1,4 +1,4 @@
-//ใช้เพื่อนับค่า want ใน array ที่ต้องการว่ามีกี่ตัว Argument: Number, array | return: Number
+//ใช้เพื่อนับค่า want ใน array ที่ต้องการว่ามีกี่ตัว Argument: Number, array | return: Number (หัวข้อที่ static เรื่อง mode)
 function count(want, array){
     var i;
     var count = 0
@@ -23,12 +23,12 @@ function set(array){
     return newArray
 }
 
-//ใช้เพื่อหาค่า log ของ y ฐาน x Argument: Number, Number | return: Number
+//ใช้เพื่อหาค่า log ของ y ฐาน x Argument: Number, Number | return: Number (หัวข้อที่ 14 เรื่อง Logarithm)
 function getBaseLog(x, y) {
     return Math.log(y) / Math.log(x);
 }
 
-//ใช้เพื่อหาค่าตาม 3 เหลี่ยมพาสคาล ใช้ในทฤษฎีบททวินาม(Binomial Theorem) Argument: Number | return: array
+//ใช้เพื่อหาค่าตาม 3 เหลี่ยมพาสคาล Argument: Number | return: array (หัวข้อที่ 15 เรื่อง ทฤษฎีบททวินาม)
 function trianglePascal_n(num){
     var round, value, now_value
     value = [1, 1]
@@ -178,7 +178,7 @@ function findExponential(){
 }
 
 
-//Logarithm(Fundamental)
+//Logarithm
 function findLog(){
     var value, base
     value = document.forms["Logarithm_form"]["value_x"].value
