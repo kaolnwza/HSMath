@@ -1,3 +1,8 @@
+//ใช้เพื่อหาค่า log ของ y ฐาน x Argument: Number, Number | return: Number (หัวข้อที่ 14 เรื่อง Logarithm)
+function getBaseLog(x, y) {
+    return Math.log(y) / Math.log(x);
+}
+
 // 14.ฟังก์ชันเอกโพซ์เนนเชียล และฟังก์ชันลอการิทึม
 //Exponential
 function findExponential(){
