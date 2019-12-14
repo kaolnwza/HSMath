@@ -81,3 +81,18 @@ function bioTheorem(){
     document.getElementById("binomial_theorem").innerHTML = data.join(" + ")
     return false
 }
+//ใช้เพื่อหาค่าตาม 3 เหลี่ยมพาสคาล ใช้ในทฤษฎีบททวินาม(Binomial Theorem) | return: array
+function trianglePascal_n(num){
+    var round, value, now_value
+    value = [1, 1]
+    for(round = 1; round <= num; round++){
+        now_value = []
+        for(posi = 1; posi < round; posi++){
+            now_value.push(value[posi]+value[posi-1])
+        }
+        now_value.unshift(1)
+        now_value.push(1)
+        value = now_value
+    }
+    return value
+}

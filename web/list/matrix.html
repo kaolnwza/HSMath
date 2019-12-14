@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../script/matrix.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Linear</title>
+</head>
+<body style="background-color: #1e2126; ">
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top " style="font-family: agency fb;">
+                <div class="container">
+              <a class="navbar-brand" href="../index.html" style="font-size: 36px;">Mathematics</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav" style="font-size: 20px;">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="static.html">Static</a>
+                </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="vector.html">Vector</a>
+                </li>
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="set.html">Set</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="sequence.html">Sequence</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="analytic_geometry.html">Analytic Geometry</a>
+                </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/kaolnwza/HSMath">Github</a>
+                  </li> 
+                  <li class="nav-item top">
+                    <a class="nav-link top2" href="../index.html#comment">Report</a>
+                </li>
+                </ul>
+              </div>  </div>
+            </nav>
+    <div class="container" style="background-color: rgb(214, 214, 214); font-family: bangna new;">
+        <h1 class="text-center p-3"><strong >Linear</strong></h1><hr>
+        <form name="matrix_form" onsubmit="return plus_minusMatrix()">
+            <p><strong>+/- Matrix <input type="submit" value="calculate"></strong><br>
+                <select name="member_matrix" onchange="form_Plus_minusMatrix()" required>
+                    <option value="2">Matrix 2x2</option>
+                    <option value="3">Matrix 3x3</option>
+                </select>
+                <select name="plus_minus" required>
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                </select>
+    
+                <div id="plus_minus_matrix">
+                    <div style='width: 100%;'>
+                        <div style='width: 50%; float: left;'>
+                            matrix A (2x2)
+                            <div>
+                                <input type='text' name='matA_11'> <input type='text' name='matA_12'><br>
+                                <input type='text' name='matA_21'> <input type='text' name='matA_22'>
+                            </div>
+                        </div>
+                        <div style='display: inline;'>
+                            matrix B (2x2)
+                            <div>
+                                <input type='text' name='matB_11'> <input type='text' name='matB_12'><br>
+                                <input type='text' name='matB_21'> <input type='text' name='matB_22'>
+                            </div>
+                        </div>
+                    </div>
+                    <div style='display: inline;'>
+                        <strong>Answer</strong> matrix (2x2)
+                        <div>
+                            <input id='matAB_11' placeholder='ans' readonly style='text-align: center;'> 
+                            <input id='matAB_12' placeholder='ans' readonly style='text-align: center;'><br>
+                            <input id='matAB_21' placeholder='ans' readonly style='text-align: center;'> 
+                            <input id='matAB_22' placeholder='ans' readonly style='text-align: center;'>
+                        </div>
+                    </div>
+                </div>
+            </p>
+        </form>
+    </div>
+    <hr>
+</body>
+</html>

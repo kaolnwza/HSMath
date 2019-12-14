@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../script/exponential_and_logarithm.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Linear</title>
+</head>
+<body style="background-color: #1e2126; ">
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top " style="font-family: agency fb;">
+                <div class="container">
+              <a class="navbar-brand" href="../index.html" style="font-size: 36px;">Mathematics</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav" style="font-size: 20px;">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="static.html">Static</a>
+                </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="vector.html">Vector</a>
+                </li>
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="set.html">Set</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="sequence.html">Sequence</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="analytic_geometry.html">Analytic Geometry</a>
+                </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/kaolnwza/HSMath">Github</a>
+                  </li> 
+                  <li class="nav-item top">
+                    <a class="nav-link top2" href="../index.html#comment">Report</a>
+                </li>
+                </ul>
+              </div>  </div>
+            </nav>
+    <div class="container" style="background-color: rgb(214, 214, 214); font-family: bangna new;">
+            <h1 class="text-center p-3"><strong >Exponential&Logarithm</strong></h1><hr>
+        <div class="row">
+            <div class="col-lg-6 mt-4">
+              <form name="Exponential_form" onsubmit="return findExponential()">
+                <p><strong>Exponential</strong><br>
+                    a = <input type="text" name="value" placeholder="static value" class="form-control">
+                    x = <input type="text" name="power" placeholder="power" class="form-control"><br>
+                    <input type="submit" value="calculate" class="btn btn-primary">
+                </p>
+              </form>
+            </div>
+            <div class="col-lg-5 shadow rounded my-auto p-4">
+              a<sup>x</sup> = <strong id="exponential">Ans</strong><br>
+              Feature: <strong id="featureExpo">Ans</strong><br>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-lg-6 mt-4">
+            <form name="Logarithm_form" onsubmit="return findLog()">
+              <p><strong>Logarithm</strong><br>
+                  x = <input type="text" name="value_x" placeholder="static value" class="form-control">
+                  y = <input type="text" name="value_y" placeholder="base" class="form-control"><br>
+                  <input type="submit" value="calculate" class="btn btn-primary">
+              </p>
+            </form>
+          </div>
+          <div class="col-lg-5 shadow rounded my-auto p-4">
+            Log<sub>x</sub>y = <strong id="log">Ans</strong><br>
+          </div>
+        </div>
+
+    </div>
+</body>
+</html>
