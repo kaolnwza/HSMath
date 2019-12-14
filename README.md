@@ -1,5 +1,7 @@
 # High-school Calculator
-[Link](https://home-561fc.web.app/web/index.html?fbclid=IwAR3LtQ3o1COdOo410RXnqgtyit42Aa7GNkjLo1PpuiMz-paAG2ahGVEs_Ec)
+### Link
+- [Website](https://home-561fc.web.app/web/index.html?fbclid=IwAR3LtQ3o1COdOo410RXnqgtyit42Aa7GNkjLo1PpuiMz-paAG2ahGVEs_Ec)
+- [Presentation](https://www.youtube.com/watch?v=gVLSgQi0AwE&feature=youtu.be)
 ### Feature
 > โปรแกรมช่วยคํานวนสูตรคณิตศาสตร์ของระดับชั้นมัธยมปลาย เพื่อให้ได้คําตอบที่ถูกต้องและแม่นยํา
 
