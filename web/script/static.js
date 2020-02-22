@@ -2,11 +2,9 @@
 function static() {
     var input;
     var med = 0,
-        mode,
         xbar = 0,
         sam = 0;
-    var input_notdone,
-        input_done = [];
+    var input_done = [];
     var sd_sigma,
         sd_saved = 0,
         sd_s,
