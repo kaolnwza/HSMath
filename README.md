@@ -1,7 +1,7 @@
 # High-school Calculator
 ### Link
 - [Website](https://kaolnwza.github.io/HSMath/)
-- [Presentation](https://www.youtube.com/watch?v=gVLSgQi0AwE&feature=youtu.be)
+- [Presentation](https://youtu.be/WCGk50eJSok)
 ### Feature
 > โปรแกรมช่วยคํานวนสูตรคณิตศาสตร์ของระดับชั้นมัธยมปลาย เพื่อให้ได้คําตอบที่ถูกต้องและแม่นยํา
 
